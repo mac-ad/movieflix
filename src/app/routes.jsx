@@ -1,6 +1,14 @@
 import { Navigate, useRoutes } from "react-router-dom";
 import { MainLayout } from "./Layout";
-import { Discover, Home, Search, TopRated, Trending } from "./Pages";
+import {
+  Discover,
+  Home,
+  MainHome,
+  Recent,
+  Search,
+  TopRated,
+  Trending,
+} from "./Pages";
 
 export default function Router() {
   const routes = useRoutes([
@@ -12,6 +20,10 @@ export default function Router() {
       path: "/main",
       element: <MainLayout />,
       children: [
+        {
+          path: "",
+          element: <MainHome />,
+        },
         {
           path: "discover",
           element: <Discover />,
@@ -28,7 +40,14 @@ export default function Router() {
           path: "search",
           element: <Search />,
         },
+        {
+          path: "recent",
+          element: <Recent />,
+        },
       ],
+    },
+    {
+      path: "*",
     },
   ]);
 

@@ -1,0 +1,28 @@
+.logo {
+  display: flex;
+  gap: 0.6em;
+  align-items: center;
+  font-weight: bold;
+  justify-content: center;
+  /* height: var(--topbar-height); */
+  width: var(--sidebar-width);
+}
+
+.logo svg {
+  font-size: 1.7rem;
+}
+
+.logo p {
+  font-size: 1.5rem;
+  display: none;
+}
+
+@media only screen and (min-width: 900px) {
+  .logo p {
+    /* display: block; */
+  }
+
+  .logo {
+    justify-content: unset;
+  }
+}

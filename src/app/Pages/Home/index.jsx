@@ -1,9 +1,11 @@
+import { NavLink } from "react-router-dom";
+
 const Home = () => {
   return (
     <div>
-      Home
+      <NavLink to="/main/discover">Go to main page</NavLink>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

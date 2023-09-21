@@ -1,0 +1,81 @@
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2em;
+  width: var(--sidebar-width);
+  background: black;
+}
+
+.nav-container > * {
+  /* border: 1px solid red; */
+}
+
+.nav-container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+
+.nav-container ul a {
+  display: flex;
+}
+
+.nav-container ul a {
+  display: block;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-transform: capitalize;
+  gap: 0.6em;
+  transition: opacity 300ms ease;
+  padding: 0.5em 0;
+  opacity: 0.5;
+}
+
+.nav-container ul a p {
+  display: none;
+}
+
+.nav-container ul a > * {
+}
+
+.nav-container ul a .icon {
+  display: flex;
+  width: 30px;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+
+.nav-container ul svg {
+  font-size: 1.4rem;
+}
+
+.nav-container ul a .icon.solid,
+.nav-container ul a.active .icon.light {
+  display: none;
+}
+
+.nav-container ul a.active .icon.solid {
+  display: block;
+}
+
+.nav-container ul a.active {
+  opacity: 1;
+}
+
+.nav-container ul a:hover {
+  opacity: 1;
+}
+
+@media only screen and (min-width: 900px) {
+  .nav-container ul {
+    align-items: unset;
+  }
+  .nav-container ul a p {
+    /* display: block; */
+  }
+}

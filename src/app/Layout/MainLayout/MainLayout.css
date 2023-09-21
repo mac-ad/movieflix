@@ -1,3 +1,38 @@
 .main-layout-container {
+  --sidebar-width: 50px;
+  --topbar-height: 70px;
   display: flex;
+  min-height: 100vh;
+}
+
+.main-layout-container > * {
+  /* padding: 1em 0; */
+}
+
+.main-layout-container > *:first-child {
+  position: fixed;
+  height: 100vh;
+  padding-top: 3em;
+}
+
+.main-layout-container > *:last-child {
+  width: calc(100vw - var(--sidebar-width));
+  margin-left: var(--sidebar-width);
+  /* padding-top: 2em; */
+}
+
+@media only screen and (min-width: 700px) {
+  .main-layout-container {
+    --sidebar-width: 70px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .main-layout-container {
+    /* --sidebar-width: 200px; */
+  }
+
+  .main-layout-container > *:first-child {
+    padding: 3em 1em 0;
+  }
 }

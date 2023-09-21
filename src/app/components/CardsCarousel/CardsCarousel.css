@@ -1,0 +1,24 @@
+.cards-carousel-container {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  gap: 1em;
+  padding: 2em 1em;
+}
+
+.cards-carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.cards-carousel-container > * {
+  flex-shrink: 0;
+  transition: transform 200ms ease;
+}
+
+.cards-carousel-container > *:hover ~ * {
+  transform: translateX(20px);
+}
+
+.cards-carousel-container > *:hover {
+  transform: translateX(10px) scale(1.05);
+}
