@@ -5,5 +5,15 @@ import Trending from "./Trending/index";
 import Home from "./Home/index";
 import MainHome from "./MainHome/index";
 import Recent from "./Recent/index";
+import MovieDetail from "./MovieDetail/index";
 
-export { Discover, Search, TopRated, Trending, Home, MainHome, Recent };
+export {
+  Discover,
+  Search,
+  TopRated,
+  Trending,
+  Home,
+  MainHome,
+  Recent,
+  MovieDetail,
+};

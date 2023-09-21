@@ -1,0 +1,9 @@
+.auto-scroll-carousel {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.auto-scroll-carousel > * {
+  flex-shrink: 0;
+}

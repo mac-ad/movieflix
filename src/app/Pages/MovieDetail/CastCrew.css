@@ -1,0 +1,10 @@
+.castcrew-container {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.castcrew-container .cards-carousel {
+  padding-bottom: 2em;
+}

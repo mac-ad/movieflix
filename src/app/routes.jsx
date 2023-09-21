@@ -4,6 +4,7 @@ import {
   Discover,
   Home,
   MainHome,
+  MovieDetail,
   Recent,
   Search,
   TopRated,
@@ -45,6 +46,10 @@ export default function Router() {
           element: <Recent />,
         },
       ],
+    },
+    {
+      path: "/movie/:movieId",
+      element: <MovieDetail />,
     },
     {
       path: "*",

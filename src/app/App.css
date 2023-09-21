@@ -1,12 +1,67 @@
 body {
-  --dim-white: rgba(255, 255, 255, 0.8);
+  --fs-n: 1rem;
+  --fs-s: 0.95rem;
+  --fs-m: 1.1rem;
+  --fs-l: 1.4;
+  --fs-xl: 2rem;
+  --fs-xxxl: 3rem;
+  --fs-xs: 0.85rem;
 
-  background: rgb(16, 16, 16);
+  --dim-white: rgba(255, 255, 255, 0.8);
+  --green: rgba(11, 232, 11, 0.89);
+
+  /* background: rgb(16, 16, 16); */
   color: white;
+  background: rgb(238, 237, 237);
 }
 
 img {
   width: 100%;
+}
+
+p {
+  line-height: 1.4;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+.secondary-text {
+  opacity: 0.7;
+  font-size: var(--fs-s);
+}
+
+.secondary {
+  color: rgba(249, 249, 249, 0.575);
+}
+
+.dim {
+  opacity: 0.6;
+}
+
+.btn-1 {
+  /* text-transform: capitalize;
+  background: var(--green);
+  color: white;
+  opacity: 0.8;
+  border: none;
+  cursor: pointer; */
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.btn-1:hover {
+  opacity: 1;
+}
+
+.wrapper {
+  width: 95%;
+  max-width: 1400px;
+  margin-inline: auto;
+  /* border: 1px solid white; */
 }
 
 .skeleton {

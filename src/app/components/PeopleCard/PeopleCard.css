@@ -1,0 +1,19 @@
+.people-card-container {
+  width: 170px;
+}
+
+.people-card-container .name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.people-card-container img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.people-card-container .name {
+  font-size: var(--fs-xs);
+}
