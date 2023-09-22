@@ -10,6 +10,8 @@ body {
   --dim-white: rgba(255, 255, 255, 0.8);
   --green: rgba(11, 232, 11, 0.89);
 
+  --rounded: 5em;
+
   /* background: rgb(16, 16, 16); */
   color: white;
   background: rgb(238, 237, 237);
