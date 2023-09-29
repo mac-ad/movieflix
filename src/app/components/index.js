@@ -8,6 +8,9 @@ import MovieCardSkeleton from "./MovieCard/MovieCardSkeleton";
 import Tag from "./Tag/index";
 import CompanyLogo from "./CompanyLogo/index";
 import AutoScrollCarousel from "./AutoScrollCarousel/index";
+import ImagesShowCase from "./ImagesShowCase/index";
+import ProgressiveImg from "./ProgressiveImg/index";
+import FullScreenLoader from "./FullScreenLoader/index";
 
 export {
   Nav,
@@ -20,4 +23,7 @@ export {
   Tag,
   CompanyLogo,
   AutoScrollCarousel,
+  ImagesShowCase,
+  ProgressiveImg,
+  FullScreenLoader,
 };

@@ -1,7 +1,28 @@
+.auto-scroll-carousel-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+}
+
+.auto-scroll-carousel-container .header {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.auto-scroll-carousel-container h2 {
+  text-transform: capitalize;
+}
+
+.auto-scroll-carousel-container {
+  color: var(--white);
+}
+
 .auto-scroll-carousel {
   display: flex;
   overflow-x: scroll;
   overflow-y: hidden;
+  padding-left: calc(100vw - max(95%, var(--max-wrapper-width)));
 }
 
 .auto-scroll-carousel > * {

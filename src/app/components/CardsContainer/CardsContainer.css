@@ -2,6 +2,10 @@
   /* padding-bottom: 2em; */
 }
 
+.cards-container.dim {
+  opacity: 0.3;
+}
+
 .cards-container .main {
   display: grid;
   /* gap: 0.1em; */

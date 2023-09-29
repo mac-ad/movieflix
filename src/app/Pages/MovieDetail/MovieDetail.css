@@ -45,7 +45,6 @@
 
 .movie-detail-page-container .poster-part-container > * {
   z-index: 2;
-  /* border: 1px solid white; */
 }
 
 .movie-detail-page-container .poster-part-container {
@@ -54,8 +53,7 @@
 .movie-detail-page-container .poster-part-container .main {
   display: flex;
   justify-content: flex-start;
-  /* border: 1px solid red; */
-  /* align-items: center; */
+  /* align-items: enter; */
 }
 
 .movie-detail-page-container .poster-part-container .detail {

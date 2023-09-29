@@ -9,13 +9,16 @@ import {
   Search,
   TopRated,
   Trending,
+  MovieFullCredits,
 } from "./Pages";
+import { DetectScroll } from "./HOC";
 
 export default function Router() {
   const routes = useRoutes([
     {
       path: "/",
-      element: <Home />,
+      // element: <Home />,
+      element: <Navigate to="main/discover" />,
     },
     {
       path: "/main",
@@ -50,6 +53,10 @@ export default function Router() {
     {
       path: "/movie/:movieId",
       element: <MovieDetail />,
+    },
+    {
+      path: "/movie/:movieId/fullcredits",
+      element: <MovieFullCredits />,
     },
     {
       path: "*",

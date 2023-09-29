@@ -1,38 +1,35 @@
 import { imgURL } from "../../statics";
 import { CardsContainer, MovieCard, MovieCardSkeleton } from "../../components";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { axiosInstance } from "../../config/axios";
-import { discoverMovieUrl } from "../../utils/queryUrls";
+import { useQuery } from "@tanstack/react-query";
+import { useDiscoverMovies } from "../../hooks";
+import { GlobalContext } from "../../context";
 
 const Discover = () => {
-  const [data, setData] = useState([]);
+  const { data, isLoading } = useDiscoverMovies();
 
-  const fetchData = async () => {
-    const res = await axiosInstance({
-      method: "get",
-      url: `${discoverMovieUrl}`,
-    });
-    setData((prev) => [...prev, ...res.data.results]);
-  };
+  const { scrolledToBottom } = useContext(GlobalContext);
 
   useEffect(() => {
-    fetchData();
-    fetchData();
-    fetchData();
-    fetchData();
+    console.log(scrolledToBottom);
   }, []);
 
   return (
     <div className="page-container discover-container">
       {/* <h2>Discover</h2> */}
 
-      <CardsContainer>
-        {data
-          ? data.map((item, index) => (
-              <MovieCard index={index} key={`${item}${index}`} data={item} />
-            ))
-          : null}
-      </CardsContainer>
+      {isLoading ? (
+        "...loading"
+      ) : (
+        <CardsContainer>
+          {data
+            ? data?.data?.results?.map((item, index) => (
+                <MovieCard index={index} key={`${item}${index}`} data={item} />
+              ))
+            : null}
+        </CardsContainer>
+      )}
     </div>
   );
 };

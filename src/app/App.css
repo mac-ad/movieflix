@@ -1,20 +1,25 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   --fs-n: 1rem;
   --fs-s: 0.95rem;
   --fs-m: 1.1rem;
   --fs-l: 1.4;
   --fs-xl: 2rem;
-  --fs-xxxl: 3rem;
+  --fs-xxxl: 1.8rem;
   --fs-xs: 0.85rem;
 
+  --white: white;
   --dim-white: rgba(255, 255, 255, 0.8);
-  --green: rgba(11, 232, 11, 0.89);
+  --green: rgba(33, 151, 33, 0.89);
 
   --rounded: 5em;
+  --max-wrapper-width: 1400px;
 
-  /* background: rgb(16, 16, 16); */
-  color: white;
-  background: rgb(238, 237, 237);
+  background: rgb(16, 16, 16);
+  color: var(--white);
 }
 
 img {
@@ -26,7 +31,35 @@ p {
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: var(--fs-xxxl);
+}
+
+a.underline {
+  position: relative;
+}
+
+a.underline.link {
+  opacity: 0.6;
+}
+
+a.underline.link:hover {
+  opacity: 1;
+}
+
+a.underline:hover:before {
+  transform: scaleX(1);
+}
+
+a.underline:before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background: var(--green);
+  bottom: -2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 200ms ease;
 }
 
 .secondary-text {
@@ -36,6 +69,10 @@ h2 {
 
 .secondary {
   color: rgba(249, 249, 249, 0.575);
+}
+
+.secondary-font {
+  font-size: var(--fs-xs);
 }
 
 .dim {
@@ -52,7 +89,7 @@ h2 {
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  /* display: none; */
 }
 
 .btn-1:hover {
@@ -61,7 +98,7 @@ h2 {
 
 .wrapper {
   width: 95%;
-  max-width: 1400px;
+  max-width: var(--max-wrapper-width);
   margin-inline: auto;
   /* border: 1px solid white; */
 }

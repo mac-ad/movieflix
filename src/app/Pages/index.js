@@ -6,6 +6,7 @@ import Home from "./Home/index";
 import MainHome from "./MainHome/index";
 import Recent from "./Recent/index";
 import MovieDetail from "./MovieDetail/index";
+import MovieFullCredits from "./MovieFullCredits/index";
 
 export {
   Discover,
@@ -16,4 +17,5 @@ export {
   MainHome,
   Recent,
   MovieDetail,
+  MovieFullCredits,
 };

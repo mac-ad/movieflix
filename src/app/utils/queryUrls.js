@@ -3,5 +3,14 @@ export const api_key =
 
 const discoverMovieUrl = "/discover/movie";
 const topRatedMovieUrl = "/movie/top_rated";
+const movieDetailUrl = "/movie/";
+const movieCastUrl = "/movie/";
+const searchMovieUrl = "/search/movie";
 
-export { discoverMovieUrl, topRatedMovieUrl };
+export {
+  discoverMovieUrl,
+  topRatedMovieUrl,
+  movieDetailUrl,
+  movieCastUrl,
+  searchMovieUrl,
+};
