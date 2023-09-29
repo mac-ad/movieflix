@@ -1,3 +1,9 @@
 # movieflix
 
 A movie info website that uses the TMDB API for data.
+
+- React
+- Vanila css
+- React query
+  - infinite scrolling using useInfiniteQuery
+  - Data caching
