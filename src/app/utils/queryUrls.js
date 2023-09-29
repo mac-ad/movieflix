@@ -1,5 +1,4 @@
-export const api_key =
-  "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5MTdkNGE0YmRiNzY3MDk5ZDYzYjFiZTQwM2M0ZjE5MiIsInN1YiI6IjYxMDc4Y2ZkZTYxZTZkMDA0NzEyYWE3MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.kg8tJFCga601BzAtLih9PC84__6ICp9bmaEs5-Yho1k";
+export const api_key = process.env.REACT_APP_API_KEY;
 
 const discoverMovieUrl = "/discover/movie";
 const topRatedMovieUrl = "/movie/top_rated";
