@@ -5,6 +5,9 @@ const topRatedMovieUrl = "/movie/top_rated";
 const movieDetailUrl = "/movie/";
 const movieCastUrl = "/movie/";
 const searchMovieUrl = "/search/movie";
+const searchTvUrl = "/search/tv";
+const searchPeopleUrl = "/search/person";
+const personDetailUrl = "/person";
 
 export {
   discoverMovieUrl,
@@ -12,4 +15,7 @@ export {
   movieDetailUrl,
   movieCastUrl,
   searchMovieUrl,
+  searchTvUrl,
+  searchPeopleUrl,
+  personDetailUrl,
 };

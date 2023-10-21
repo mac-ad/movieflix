@@ -6,17 +6,22 @@ body {
   --fs-n: 1rem;
   --fs-s: 0.95rem;
   --fs-m: 1.1rem;
-  --fs-l: 1.4;
+  --fs-l: 1.4rem;
   --fs-xl: 2rem;
   --fs-xxxl: 1.8rem;
   --fs-xs: 0.85rem;
+  --fs-xxs: 0.78rem;
 
   --white: white;
   --dim-white: rgba(255, 255, 255, 0.8);
   --green: rgba(33, 151, 33, 0.89);
 
   --rounded: 5em;
+  --slight-round: 0.2em;
   --max-wrapper-width: 1400px;
+
+  font-family: "DM Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
 
   background: rgb(16, 16, 16);
   color: var(--white);

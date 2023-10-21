@@ -1,60 +1,44 @@
 .search-container {
-  padding: 3em 0 2em;
+  --search-box-height: 10vh;
+
   display: flex;
   flex-direction: column;
   gap: 2em;
+  margin-top: var(--search-box-height);
 }
 
-.pagination-container {
+.search-form-container {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: calc(100vw - var(--sidebar-width));
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  height: var(--search-box-height);
+  top: 0;
 }
 
-.pagination-container button {
+.search-form-container form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: calc(100% - 2em);
+  margin-inline: auto;
+  max-width: 700px;
+  gap: 0.5em;
+}
+
+.search-container form button {
+  grid-column: 1/-1;
+}
+
+.search-container form > * {
   padding: 0.5em 1em;
-  font-weight: 700;
-  color: var(--white);
-  background: var(--green);
-  border: none;
-}
-
-.searchBox-container {
-  display: flex;
-  padding: 0 0.5em;
-}
-
-.searchBox-container form {
-  flex-grow: 1;
-  display: flex;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.searchBox-container input {
-  padding: 0.8em 2em 0.8em 1em;
-  width: 100%;
-  flex-grow: 1;
-  background: rgb(39, 38, 38);
-  border: none;
-  font-size: var(--fs-n);
-  color: var(--white);
-  text-transform: uppercase;
-}
-
-.searchBox-container button {
-  padding: 0 1em;
-  text-transform: capitalize;
-  background: var(--green);
-  color: var(--white);
-  border: none;
-  font-weight: bold;
 }
 
 .search-result-container {
   display: flex;
   flex-direction: column;
-  gap: 1em;
-  padding: 2em;
 }
 
 @media only screen and (min-width: 700px) {

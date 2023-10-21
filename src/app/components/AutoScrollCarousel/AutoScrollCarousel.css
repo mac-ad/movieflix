@@ -1,7 +1,6 @@
 .auto-scroll-carousel-container {
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
 }
 
 .auto-scroll-carousel-container .header {
@@ -12,6 +11,7 @@
 
 .auto-scroll-carousel-container h2 {
   text-transform: capitalize;
+  font-size: var(--fs-l);
 }
 
 .auto-scroll-carousel-container {
@@ -20,9 +20,8 @@
 
 .auto-scroll-carousel {
   display: flex;
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: hidden;
-  padding-left: calc(100vw - max(95%, var(--max-wrapper-width)));
 }
 
 .auto-scroll-carousel > * {

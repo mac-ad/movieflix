@@ -4,24 +4,22 @@ import { GlobalContext } from "../context";
 export const GlobalContextProvider = ({ children }) => {
   const [scrolledToBottom, setScrolledToBottom] = useState(false);
 
-  const resetScroll = () => {
-    setScrolledToBottom(false);
-  };
+  // const resetScroll = () => {
+  //   setScrolledToBottom(false);
+  // };
 
-  useEffect(() => {
-    if (scrolledToBottom) {
-      resetScroll();
-      // alert("scrolled to bottom");
-    }
-  }, [scrolledToBottom]);
+  // useEffect(() => {
+  //   if (scrolledToBottom) {
+  //     resetScroll();
+  //     // alert("scrolled to bottom");
+  //   }
+  // }, [scrolledToBottom]);
 
-  const value = {
-    scrolledToBottom,
-    resetScroll,
-    setScrolledToBottom,
-  };
+  // const value = {
+  //   scrolledToBottom,
+  //   resetScroll,
+  //   setScrolledToBottom,
+  // };
 
-  return (
-    <GlobalContext.Provider value={value}>{children}</GlobalContext.Provider>
-  );
+  return <GlobalContext.Provider value={{}}>{children}</GlobalContext.Provider>;
 };

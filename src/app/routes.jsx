@@ -10,6 +10,8 @@ import {
   TopRated,
   Trending,
   MovieFullCredits,
+  CastCrew,
+  Person,
 } from "./Pages";
 import { DetectScroll } from "./HOC";
 
@@ -51,13 +53,26 @@ export default function Router() {
       ],
     },
     {
-      path: "/movie/:movieId",
-      element: <MovieDetail />,
+      path: "/movies/:movieName/:movieId/",
+      children: [
+        {
+          path: "",
+          element: <MovieDetail />,
+        },
+        {
+          path: "castcrew",
+          element: <CastCrew />,
+        },
+      ],
     },
     {
-      path: "/movie/:movieId/fullcredits",
-      element: <MovieFullCredits />,
+      path: "/person/:personName/:personId",
+      element: <Person />,
     },
+    // {
+    //   path: "/movies/:movieId/fullcredits",
+    //   element: <MovieFullCredits />,
+    // },
     {
       path: "*",
     },

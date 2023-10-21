@@ -22,7 +22,7 @@ const Discover = () => {
       {isLoading ? (
         "...loading"
       ) : (
-        <CardsContainer>
+        <CardsContainer gap="0em">
           {data
             ? data?.data?.results?.map((item, index) => (
                 <MovieCard index={index} key={`${item}${index}`} data={item} />

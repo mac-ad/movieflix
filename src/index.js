@@ -5,8 +5,4 @@ import App from "./app/App";
 import { GlobalContextProvider } from "./app/Providers";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <GlobalContextProvider>
-    <App />
-  </GlobalContextProvider>
-);
+root.render(<App />);

@@ -1,14 +1,13 @@
 import { forwardRef } from "react";
 import "./CardsContainer.css";
 
-const CardsContainer = ({ title, fetching, gap, children }) => {
+const CardsContainer = ({ title, fetching, gap = "1em", children }) => {
   return (
-    <div
-      style={{ gap: gap }}
-      className={` ${fetching ? "dim" : ""} cards-container`}
-    >
+    <div className={`cards-container`}>
       <h2 className="title">{title}</h2>
-      <div className="main">{children}</div>
+      <div className="main" style={{ gap: gap }}>
+        {children}
+      </div>
     </div>
   );
 };

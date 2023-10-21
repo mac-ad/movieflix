@@ -1,18 +1,22 @@
 .movie-detail-page-container {
   /* border: 1px solid red; */
 }
+
 .movie-detail-page-container > * {
+  /* border: 1px solid red; */
+}
+
+.movie-detail-page-container .goback {
+  font-size: var(--fs-l);
+  margin-bottom: 2em;
 }
 
 .movie-detail-page-container .poster-part-container {
-  min-height: 70vh;
-  position: relative;
   position: relative;
   background-size: 150%;
   background-position: center;
   display: flex;
-
-  padding: 4em 0 2em;
+  padding-top: 2em;
 }
 
 @keyframes movement {
@@ -160,7 +164,7 @@
 
 @media only screen and (min-width: 800px) {
   .movie-detail-page-container .poster-part-container {
-    height: 100vh;
+    /* height: 100vh; */
   }
 
   .movie-detail-page-container .poster-part-container {

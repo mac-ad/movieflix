@@ -1,10 +1,32 @@
 .castcrew-container {
-  color: black;
   display: flex;
   flex-direction: column;
   gap: 1em;
+  /* margin-top: 2em; */
+}
+
+.castcrew-container .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.castcrew-container h2 {
+  font-size: var(--fs-m);
+}
+
+.castcrew-container .content {
+  display: grid;
+  color: black;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 }
 
 .castcrew-container .cards-carousel {
   padding-bottom: 2em;
+}
+
+@media only screen and (min-width: 800px) {
+  .castcrew-container {
+    grid-template-columns: repeat(10, 1fr);
+  }
 }

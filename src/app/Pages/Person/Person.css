@@ -1,0 +1,44 @@
+.person-page > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2em;
+  padding-bottom: 2em;
+}
+
+.person-page .header {
+  grid-column: 1/-1;
+  padding: 2em 0 1em;
+  z-index: 999;
+  width: 100%;
+}
+
+.person-page > div > * {
+  align-self: start;
+}
+
+.person-page .goback {
+  font-size: var(--fs-l);
+  cursor: pointer;
+}
+
+.person-page .image {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.person-page .details {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.person-page p {
+  /* max-width: 800px; */
+}
+
+@media only screen and (min-width: 800px) {
+  .person-page > div {
+    grid-template-columns: 1fr 2fr;
+  }
+}

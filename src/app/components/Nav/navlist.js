@@ -28,24 +28,24 @@ export const navlist = [
     iconLight: <CompassLight />,
     iconSolid: <CompassSolid />,
   },
-  {
-    label: "top rated",
-    to: "/main/top-rated",
-    iconLight: <StarLight />,
-    iconSolid: <StarSolid />,
-  },
-  {
-    label: "trending",
-    to: "/main/trending",
-    iconLight: <FireLight />,
-    iconSolid: <FireSolid />,
-  },
-  {
-    label: "recent",
-    to: "/main/recent",
-    iconLight: <ClockLight />,
-    iconSolid: <ClockSolid />,
-  },
+  // {
+  //   label: "top rated",
+  //   to: "/main/top-rated",
+  //   iconLight: <StarLight />,
+  //   iconSolid: <StarSolid />,
+  // },
+  // {
+  //   label: "trending",
+  //   to: "/main/trending",
+  //   iconLight: <FireLight />,
+  //   iconSolid: <FireSolid />,
+  // },
+  // {
+  //   label: "recent",
+  //   to: "/main/recent",
+  //   iconLight: <ClockLight />,
+  //   iconSolid: <ClockSolid />,
+  // },
   {
     label: "Search",
     to: "/main/search",

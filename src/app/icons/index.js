@@ -13,6 +13,8 @@ import FireSolid from "./svgs/FireSolid";
 import Movie from "./svgs/Movie";
 import HomeLight from "./svgs/HomeLight";
 import HomeSolid from "./svgs/HomeSolid";
+import ArrowLeft from "./svgs/ArrowLeft";
+import ArrowRight from "./svgs/ArrowRight";
 
 export {
   ClockLight,
@@ -30,4 +32,6 @@ export {
   Movie,
   HomeLight,
   HomeSolid,
+  ArrowRight,
+  ArrowLeft,
 };

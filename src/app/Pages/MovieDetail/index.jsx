@@ -1,19 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { medium, original, small } from "../../statics/";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 
 import "./MovieDetail.css";
-import { CardsCarousel, CompanyLogo, Tag } from "../../components";
 import CastCrew from "./CastCrew";
-import Images from "./Images";
 import { useParams } from "react-router-dom";
 import { axiosInstance } from "../../config/axios";
 import { movieDetailUrl } from "../../utils/queryUrls";
+import { CompanyLogo, Tag } from "../../components";
+import Icon from "../../components/Icon";
+import { ArrowLeft } from "../../icons";
 
 const MovieDetail = () => {
-  const { movieId } = useParams();
+  // const location = useLocation();
+  const { movieName, movieId } = useParams();
 
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   const fetchData = async () => {
     setLoading(true);
@@ -27,10 +32,14 @@ const MovieDetail = () => {
   };
 
   useEffect(() => {
-    fetchData();
+    if (movieId) fetchData();
   }, [movieId]);
 
-  if (loading) return "...loading";
+  useEffect(() => {
+    console.log(movieId, movieName);
+  }, []);
+
+  if (loading) return <div>...loading</div>;
 
   return (
     <div className="movie-detail-page-container">
@@ -43,6 +52,14 @@ const MovieDetail = () => {
         <div className="main wrapper">
           <div className="detail">
             <div className="header">
+              <div
+                className="goback"
+                onClick={(e) => {
+                  navigate(-1);
+                }}
+              >
+                <Icon icon={<ArrowLeft />} />
+              </div>
               <h2 className="title">{data?.title}</h2>
               <ul className="brief secondary secondary-font">
                 <li>{data?.release_date?.split("-")[0]}</li>
@@ -75,8 +92,7 @@ const MovieDetail = () => {
           </div>
         </div>
       </div>
-      <CastCrew movieId={data.id} />
-      {/* <Images images={images} /> */}
+      <CastCrew movieId={data.id} movieName={data.title} />
     </div>
   );
 };
