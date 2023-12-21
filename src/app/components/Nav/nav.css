@@ -1,81 +1,191 @@
+nav .logo {
+  width: fit-content;
+  width: 9rem;
+}
+
+nav .logo img {
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+  background: var(--gray-1);
+}
+
 .nav-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 2em;
-  width: var(--sidebar-width);
-  background: black;
+  border-bottom: 1px solid rgba(225, 225, 225, 0.149);
+  position: relative;
 }
 
-.nav-container > * {
-  /* border: 1px solid red; */
+nav .burger {
+  font-size: var(--fs-xl);
+  margin-right: 0.5em;
+  cursor: pointer;
 }
 
-.nav-container ul {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  align-items: center;
-  /* border: 1px solid red; */
-}
-
-.nav-container ul a {
+nav > div,
+nav ul {
   display: flex;
 }
 
-.nav-container ul a {
-  display: block;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  text-transform: capitalize;
-  gap: 0.6em;
-  transition: opacity 300ms ease;
-  padding: 0.5em 0;
-  opacity: 0.5;
+nav ul li {
+  white-space: nowrap;
 }
 
-.nav-container ul a p {
-  display: none;
-}
-
-.nav-container ul a > * {
-}
-
-.nav-container ul a .icon {
-  display: flex;
-  width: 30px;
+.nav-list {
   justify-content: center;
-  align-items: center;
-  /* border: 1px solid red; */
 }
 
-.nav-container ul svg {
-  font-size: 1.4rem;
+.nav-list li {
+  margin-inline: 1em;
+  text-transform: uppercase;
+  font-size: var(--fs-s);
 }
 
-.nav-container ul a .icon.solid,
-.nav-container ul a.active .icon.light {
+.nav-list.desktop {
   display: none;
 }
 
-.nav-container ul a.active .icon.solid {
-  display: block;
+.nav-list.mobile {
+  position: absolute;
+  background: var(--gray-1);
+  display: flex;
+  left: 0;
+  right: 0;
+  padding: 1em;
+  top: calc(100% + 0.1em);
+  transition: all 200ms ease;
+  transform: scaleY(0);
+  transform-origin: top;
+  background: var(--gray-light);
 }
 
-.nav-container ul a.active {
-  opacity: 1;
+.nav-list.mobile.visible {
+  transform: scaleY(1);
 }
 
-.nav-container ul a:hover {
-  opacity: 1;
+nav .search-container {
+  display: none;
+  padding: 0.4em 1em;
+  border-radius: 3px;
+  background: var(--gray-2);
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  right: 1em;
+  border: 1px solid rgba(255, 255, 255, 0.276);
+  z-index: 999;
 }
 
-@media only screen and (min-width: 900px) {
-  .nav-container ul {
-    align-items: unset;
+nav .search-container.visible {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+nav .search-icon {
+  font-size: var(--fs-l);
+}
+
+nav .search-container ~ .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: none;
+}
+
+nav .search-container.visible ~ .overlay {
+  display: unset;
+}
+
+nav .search-container input {
+  background: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  font-size: var(--fs-n);
+  padding: 0.5em 1em;
+  width: 100%;
+}
+
+nav .search-container .filter-icon {
+  background: rgba(255, 255, 255, 0.233);
+  border: none;
+  color: white;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  padding: 0 1em;
+}
+
+nav .search-container .icon {
+  opacity: 0.3;
+}
+
+.search-container-desktop {
+  display: none;
+  margin-left: auto;
+  border: 1px solid red;
+  align-items: center;
+  width: 50%;
+  max-width: 25rem;
+  padding: 0 0 0 0.5em;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.31);
+}
+
+.search-container-desktop input {
+  background: none;
+  color: white;
+  padding: 0.3em 1em;
+  outline: none;
+  width: 100%;
+  border: none;
+}
+
+.search-container-desktop .filter-icon {
+  background: rgba(255, 255, 255, 0.233);
+  color: white;
+  border: none;
+  padding: 0.7em 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  nav {
+    justify-content: flex-start;
   }
-  .nav-container ul a p {
-    /* display: block; */
+
+  nav .search-icon {
+    margin-left: auto;
+  }
+
+  nav .search-icon {
+    display: none;
+  }
+
+  nav .search-container {
+    display: none;
+  }
+
+  .search-container-desktop {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  nav .burger {
+    display: none;
+  }
+
+  .nav-list.desktop {
+    display: flex;
+    margin-left: 2em;
   }
 }

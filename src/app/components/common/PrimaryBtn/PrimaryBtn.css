@@ -1,0 +1,15 @@
+.primary-btn {
+  border: 1px solid red;
+  width: fit-content;
+  background: var(--primary);
+  color: black;
+  font-weight: bold;
+  border: none;
+  padding: 0.8em 1.5em;
+  border-radius: 3px;
+  transition: all 400ms ease;
+}
+
+.primary-btn:hover {
+  opacity: 0.85;
+}

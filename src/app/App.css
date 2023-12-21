@@ -3,127 +3,53 @@ html {
 }
 
 body {
+  --gray-1: #131213;
+  --gray-2: #111010;
+  --gray-light: #1a1a1b;
+  --primary: #f47f21;
+
+  --fs-s: 0.8rem;
   --fs-n: 1rem;
-  --fs-s: 0.95rem;
-  --fs-m: 1.1rem;
-  --fs-l: 1.4rem;
-  --fs-xl: 2rem;
-  --fs-xxxl: 1.8rem;
-  --fs-xs: 0.85rem;
-  --fs-xxs: 0.78rem;
+  --fs-l: 1.2rem;
+  --fs-xl: 1.5rem;
+  --fs-xxl: 2rem;
+  --fs-xxxl: 2.5rem;
 
-  --white: white;
-  --dim-white: rgba(255, 255, 255, 0.8);
-  --green: rgba(33, 151, 33, 0.89);
+  --nav-height: 70px;
 
-  --rounded: 5em;
-  --slight-round: 0.2em;
-  --max-wrapper-width: 1400px;
+  background: var(--gray-2);
+  font-family: Arial, Helvetica, sans-serif;
 
-  font-family: "DM Sans", sans-serif;
-  font-family: "Open Sans", sans-serif;
-
-  background: rgb(16, 16, 16);
-  color: var(--white);
+  color: white;
 }
 
-img {
-  width: 100%;
+li {
+  list-style: none;
+}
+
+.wrapper {
+  width: 90%;
+  margin-inline: auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+.secondary-text {
+  opacity: 0.5;
 }
 
 p {
   line-height: 1.4;
+  z-index: -1;
 }
 
-h2 {
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+h1 {
   font-size: var(--fs-xxxl);
-}
-
-a.underline {
-  position: relative;
-}
-
-a.underline.link {
-  opacity: 0.6;
-}
-
-a.underline.link:hover {
-  opacity: 1;
-}
-
-a.underline:hover:before {
-  transform: scaleX(1);
-}
-
-a.underline:before {
-  content: "";
-  position: absolute;
-  height: 1px;
-  width: 100%;
-  background: var(--green);
-  bottom: -2px;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 200ms ease;
-}
-
-.secondary-text {
-  opacity: 0.7;
-  font-size: var(--fs-s);
-}
-
-.secondary {
-  color: rgba(249, 249, 249, 0.575);
-}
-
-.secondary-font {
-  font-size: var(--fs-xs);
-}
-
-.dim {
-  opacity: 0.6;
-}
-
-.btn-1 {
-  /* text-transform: capitalize;
-  background: var(--green);
-  color: white;
-  opacity: 0.8;
-  border: none;
-  cursor: pointer; */
-}
-
-::-webkit-scrollbar {
-  /* display: none; */
-}
-
-.btn-1:hover {
-  opacity: 1;
-}
-
-.wrapper {
-  width: 95%;
-  max-width: var(--max-wrapper-width);
-  margin-inline: auto;
-  /* border: 1px solid white; */
-}
-
-.skeleton {
-  pointer-events: none;
-  background: rgb(24, 24, 24);
-  /* animation: shimmer 1s ease infinite normal; */
-}
-
-@keyframes shimmer {
-  0% {
-    opacity: 0.6;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0.6;
-  }
 }

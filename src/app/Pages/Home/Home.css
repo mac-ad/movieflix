@@ -1,0 +1,21 @@
+.home-container {
+  display: flex;
+  flex-flow: column;
+  gap: 1em;
+  align-items: center;
+  text-align: center;
+  max-width: 60rem;
+  margin-inline: auto;
+  padding: 3em 0;
+}
+
+.home-container h1,
+.home-container p {
+  max-width: 40rem;
+  max-width: 40rem;
+}
+
+.home-container button {
+  margin-top: 3em;
+  font-size: var(--fs-m);
+}

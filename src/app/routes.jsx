@@ -1,26 +1,18 @@
 import { Navigate, useRoutes } from "react-router-dom";
 import { MainLayout } from "./Layout";
-import {
-  Discover,
-  Home,
-  MainHome,
-  MovieDetail,
-  Recent,
-  Search,
-  TopRated,
-  Trending,
-  MovieFullCredits,
-  CastCrew,
-  Person,
-} from "./Pages";
+import { Home } from "./Pages";
 import { DetectScroll } from "./HOC";
 
 export default function Router() {
   const routes = useRoutes([
     {
       path: "/",
-      // element: <Home />,
-      element: <Navigate to="main/discover" />,
+      element: (
+        <MainLayout>
+          <Home />
+        </MainLayout>
+      ),
+      // element: <Navigate to="main/discover" />,
     },
     {
       path: "/main",
@@ -28,27 +20,27 @@ export default function Router() {
       children: [
         {
           path: "",
-          element: <MainHome />,
+          element: <></>,
         },
         {
           path: "discover",
-          element: <Discover />,
+          element: <></>,
         },
         {
           path: "trending",
-          element: <Trending />,
+          element: <></>,
         },
         {
           path: "top-rated",
-          element: <TopRated />,
+          element: <></>,
         },
         {
           path: "search",
-          element: <Search />,
+          element: <></>,
         },
         {
           path: "recent",
-          element: <Recent />,
+          element: <></>,
         },
       ],
     },
@@ -57,17 +49,17 @@ export default function Router() {
       children: [
         {
           path: "",
-          element: <MovieDetail />,
+          element: <></>,
         },
         {
           path: "castcrew",
-          element: <CastCrew />,
+          element: <></>,
         },
       ],
     },
     {
       path: "/person/:personName/:personId",
-      element: <Person />,
+      element: <></>,
     },
     // {
     //   path: "/movies/:movieId/fullcredits",

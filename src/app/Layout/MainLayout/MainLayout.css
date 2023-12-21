@@ -1,35 +1,3 @@
-.main-layout-container {
-  --sidebar-width: 50px;
-  --topbar-height: 70px;
-  display: flex;
-  /* min-height: 100vh; */
-}
-
-.main-layout-container > * {
-}
-
-.main-layout-container > *:first-child {
-  position: fixed;
-  height: 100vh;
-  padding-top: 2em;
-}
-
-.main-layout-container > *:last-child {
-  width: calc(100vw - var(--sidebar-width));
-  margin-left: calc(var(--sidebar-width));
-}
-
-@media only screen and (min-width: 700px) {
-  .main-layout-container {
-    --sidebar-width: 70px;
-  }
-}
-
-@media only screen and (min-width: 900px) {
-  .main-layout-container {
-  }
-
-  .main-layout-container > *:first-child {
-    padding: 3em 1em 0;
-  }
+.main-container {
+  padding: 2em 0;
 }

@@ -1,0 +1,33 @@
+.footer-container {
+}
+
+.footer-container ul.list {
+  background: var(--gray-light);
+  display: flex;
+  justify-content: center;
+  padding: 1.3em 0;
+}
+
+.footer-container ul.list li {
+  text-transform: uppercase;
+  margin-inline: 2em;
+}
+
+.footer-container .footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 3em 0;
+  align-items: center;
+  margin-inline: auto;
+  max-width: 50rem;
+  text-align: center;
+}
+
+.footer-logo img {
+  width: 13rem;
+}
+
+.footer-container ul li {
+  font-weight: 600;
+}
