@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import "./nav.css";
 import Button1 from "../common/Button1";
+import TransparentBgBtn from "../common/TransparentBgBtn";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [showMobNav, setShowMobNav] = useState(false);
@@ -29,9 +31,21 @@ const Nav = () => {
           </div>
         </div>
         <ul className="nav-list desktop">
-          <li>browse</li>
-          <li>movies</li>
-          <li>tv shows</li>
+          <TransparentBgBtn>
+            <Link to="/browse">
+              <li>browse</li>
+            </Link>
+          </TransparentBgBtn>
+          <TransparentBgBtn>
+            <Link to="/movies">
+              <li>movies</li>
+            </Link>
+          </TransparentBgBtn>
+          <TransparentBgBtn>
+            <Link to="/tv-shows">
+              <li>tv shows</li>
+            </Link>
+          </TransparentBgBtn>
         </ul>
         <Button1 className="search-icon icon" onClick={showSearchHandler}>
           <FontAwesomeIcon icon={faSearch} />
@@ -53,9 +67,21 @@ const Nav = () => {
         </div>
       </nav>
       <ul className={`nav-list mobile ${showMobNav ? "visible" : ""}`}>
-        <li>browse</li>
-        <li>movies</li>
-        <li>tv shows</li>
+        <TransparentBgBtn>
+          <Link to="/browse">
+            <li>browse</li>
+          </Link>
+        </TransparentBgBtn>
+        <TransparentBgBtn>
+          <Link to="/movies">
+            <li>movies</li>
+          </Link>
+        </TransparentBgBtn>
+        <TransparentBgBtn>
+          <Link to="/tv-shows">
+            <li>tv shows</li>
+          </Link>
+        </TransparentBgBtn>
       </ul>
     </div>
   );

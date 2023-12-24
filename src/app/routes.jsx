@@ -1,6 +1,6 @@
 import { Navigate, useRoutes } from "react-router-dom";
 import { MainLayout } from "./Layout";
-import { Home } from "./Pages";
+import { Home, Main } from "./Pages";
 import { DetectScroll } from "./HOC";
 
 export default function Router() {
@@ -15,8 +15,12 @@ export default function Router() {
       // element: <Navigate to="main/discover" />,
     },
     {
-      path: "/main",
-      element: <MainLayout />,
+      path: "/home",
+      element: (
+        <MainLayout>
+          <Main />
+        </MainLayout>
+      ),
       children: [
         {
           path: "",

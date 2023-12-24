@@ -1,0 +1,14 @@
+.transparentBgBtn {
+  border: 1px solid red;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0.5em 0;
+  border-radius: 5px;
+  color: white;
+  transition: all 300ms ease;
+}
+
+.transparentBgBtn:hover {
+  background: rgba(128, 128, 128, 0.151);
+}
