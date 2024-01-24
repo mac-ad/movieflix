@@ -27,7 +27,8 @@ const Nav = () => {
           </div>
 
           <div className="logo">
-            <img src="logo.png" alt="" />
+            {/* <img src="logo.png" alt="" /> */}
+            <h2>movieflix</h2>
           </div>
         </div>
         <ul className="nav-list desktop">

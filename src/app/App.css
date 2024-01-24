@@ -38,6 +38,19 @@ img {
   margin-inline: auto;
 }
 
+.logo h2 {
+  text-transform: uppercase;
+  background-clip: text;
+  background: linear-gradient(
+    -90deg,
+    rgb(255, 255, 255),
+    rgb(255, 177, 113),
+    var(--primary)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 button {
   cursor: pointer;
 }
