@@ -1,0 +1,102 @@
+.grid-container {
+  display: grid;
+  gap: 0.5em;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-card {
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 300ms ease;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.grid-card img {
+  transition: all 300ms ease;
+  z-index: -1;
+}
+
+.grid-card:hover {
+  border: 2px solid var(--primary);
+}
+
+.grid-card:hover img {
+  transform: scale(1.04);
+}
+
+.grid-card:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: linear-gradient(transparent, var(--gray-1));
+  z-index: 50;
+}
+
+.grid-card .content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+  position: absolute;
+  z-index: 100;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 1em 0.5em 0.5em;
+  opacity: 0.85;
+}
+
+.grid-card .brief {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.grid-card .brief .tag {
+  border-radius: 5em;
+  padding: 0.2em 0.6em;
+  font-size: var(--fs-xs);
+  color: var(--gray-1);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.grid-card .title {
+  font-weight: 600;
+}
+
+.grid-card .tag.bg-primary {
+  background: var(--primary);
+}
+
+.grid-card .tag.bg-green {
+  background: rgb(3, 153, 3);
+}
+
+@media only screen and (min-width: 600px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .grid-container {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

@@ -12,7 +12,6 @@ export default function Router() {
           <Home />
         </MainLayout>
       ),
-      // element: <Navigate to="main/discover" />,
     },
     {
       path: "/home",

@@ -6,8 +6,10 @@ body {
   --gray-1: #131213;
   --gray-2: #111010;
   --gray-light: #1a1a1b;
+  --gray-lightest: #252526;
   --primary: #f47f21;
 
+  --fs-xs: 0.75rem;
   --fs-s: 0.8rem;
   --fs-n: 1rem;
   --fs-l: 1.2rem;
@@ -27,8 +29,12 @@ li {
   list-style: none;
 }
 
+img {
+  width: 100%;
+}
+
 .wrapper {
-  width: 90%;
+  width: 95%;
   margin-inline: auto;
 }
 

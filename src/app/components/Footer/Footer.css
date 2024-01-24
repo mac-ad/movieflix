@@ -4,13 +4,17 @@
 .footer-container ul.list {
   background: var(--gray-light);
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: 1.5em;
   padding: 1.3em 0;
 }
 
 .footer-container ul.list li {
   text-transform: uppercase;
   margin-inline: 2em;
+  white-space: nowrap;
 }
 
 .footer-container .footer-content {
@@ -30,4 +34,10 @@
 
 .footer-container ul li {
   font-weight: 600;
+}
+
+@media only screen and (min-width: 550px) {
+  .footer-container ul.list {
+    flex-direction: row;
+  }
 }

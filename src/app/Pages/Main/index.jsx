@@ -1,7 +1,12 @@
 import React from "react";
+import { MainTabs } from "../../components";
 
 const Main = () => {
-  return <div>Main</div>;
+  return (
+    <div>
+      <MainTabs />
+    </div>
+  );
 };
 
 export default Main;
