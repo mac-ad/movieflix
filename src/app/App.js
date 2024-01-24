@@ -7,9 +7,15 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useContext, useEffect } from "react";
 import { GlobalContext } from "./context";
 
+import { register } from "swiper/element/bundle";
+
 const queryClient = new QueryClient();
 
 function App() {
+  useEffect(() => {
+    register();
+  }, []);
+
   return (
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
