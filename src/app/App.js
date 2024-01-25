@@ -13,6 +13,7 @@ const queryClient = new QueryClient();
 
 function App() {
   useEffect(() => {
+    console.log("registering");
     register();
   }, []);
 

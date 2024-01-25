@@ -11,11 +11,15 @@
   transition: all 300ms ease;
   position: relative;
   border: 2px solid transparent;
+  height: 100%;
 }
 
 .grid-card img {
   transition: all 300ms ease;
   z-index: -1;
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
 }
 
 .grid-card:hover {
@@ -59,7 +63,7 @@
 .grid-card .brief .tag {
   border-radius: 5em;
   padding: 0.2em 0.6em;
-  font-size: var(--fs-xs);
+  font-size: var(--fs-xxs);
   color: var(--gray-1);
   font-weight: 600;
   text-transform: uppercase;
@@ -67,6 +71,7 @@
 
 .grid-card .title {
   font-weight: 600;
+  font-size: var(--fs-n);
 }
 
 .grid-card .tag.bg-primary {
@@ -77,7 +82,7 @@
   background: rgb(3, 153, 3);
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 550px) {
   .grid-container {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -98,5 +103,17 @@
 @media only screen and (min-width: 1300px) {
   .grid-container {
     grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .grid-container {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .grid-container {
+    grid-template-columns: repeat(8, 1fr);
   }
 }

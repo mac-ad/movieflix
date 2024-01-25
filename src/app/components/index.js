@@ -7,6 +7,7 @@ import TransparentBgBtn from "./common/TransparentBgBtn";
 import Tabs from "./Tabs";
 import MainTabs from "./MainTabs";
 import Grid from "./Grid";
+import Carousel from "./Carousel";
 
 export {
   Nav,
@@ -18,4 +19,5 @@ export {
   Tabs,
   MainTabs,
   Grid,
+  Carousel,
 };

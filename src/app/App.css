@@ -9,6 +9,9 @@ body {
   --gray-lightest: #252526;
   --primary: #f47f21;
 
+  font-size: 100%;
+
+  --fs-xxs: 0.65rem;
   --fs-xs: 0.75rem;
   --fs-s: 0.8rem;
   --fs-n: 1rem;
@@ -18,6 +21,7 @@ body {
   --fs-xxxl: 2.5rem;
 
   --nav-height: 70px;
+  --card-height: 350px;
 
   background: var(--gray-2);
   font-family: Arial, Helvetica, sans-serif;
@@ -36,6 +40,17 @@ img {
 .wrapper {
   width: 95%;
   margin-inline: auto;
+}
+
+.wrapper-1 {
+  width: 95%;
+  margin-inline: auto;
+}
+
+.wrapper-2 {
+  width: 95%;
+  margin-inline: auto;
+  max-width: 1500px;
 }
 
 .logo h2 {
@@ -75,4 +90,12 @@ a {
 
 h1 {
   font-size: var(--fs-xxxl);
+}
+
+@media only screen and (min-width: 700px) {
+  .wrapper,
+  .wrapper-1,
+  .wrapper-2 {
+    width: 95%;
+  }
 }

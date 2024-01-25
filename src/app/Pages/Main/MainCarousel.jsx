@@ -101,6 +101,36 @@ const MainCarousel = ({ items }) => {
   const swiperElRef = useRef(null);
 
   useEffect(() => {
+    const swiperContainer = swiperElRef.current;
+
+    Object.assign(swiperContainer, {
+      // autoplay: {
+      //   delay: 2000,
+      // },
+
+      injectStyles: [
+        `
+        .swiper-button-next,
+        .swiper-button-prev {
+          background-position: center;
+          background-repeat: no-repeat;
+          border-radius: 100%;
+          color: red;
+          padding:.5em;
+          width:15px;
+          height:15px;
+          background:rgba(255,255,255,.8);
+          color:black;
+        }
+
+        .swiper-button-next:hover,
+          .swiper-button-prev:hover{
+            background:var(--primary);
+          }
+        `,
+      ],
+    });
+
     // listen for Swiper events using addEventListener
     swiperElRef.current.addEventListener("swiperprogress", (e) => {
       const [swiper, progress] = e.detail;
@@ -118,13 +148,13 @@ const MainCarousel = ({ items }) => {
         ref={swiperElRef}
         slides-per-view="1"
         space-between={50}
-        navigation="false"
+        navigation="true"
         pagination="false"
         centered-slides={true}
         loop="true"
       >
         {movies.map((movie) => (
-          <swiper-slide className="carousel-item">
+          <swiper-slide key={movie.id} className="carousel-item">
             <div className="carousel-content">
               <div className="info">
                 <h2>{movie.original_title}</h2>

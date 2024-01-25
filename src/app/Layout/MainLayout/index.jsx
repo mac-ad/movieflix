@@ -9,7 +9,7 @@ const MainLayout = ({ children }) => {
   return (
     <div className="main-layout-container">
       <Nav />
-      <div className="main-container wrapper">{children}</div>
+      <div className="main-container">{children}</div>
       <Footer />
     </div>
   );
