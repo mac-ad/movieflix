@@ -3,12 +3,15 @@ import axios from "axios";
 import { Grid } from "../index";
 import { useState, useEffect } from "react";
 import { mainTabsList } from "../../statics";
+import { useNavigate } from "react-router-dom";
 
 const MainTabs = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   const [movies, setMovies] = useState([]);
   const [tv, setTv] = useState([]);
+
+  const navigate = useNavigate();
 
   const fetchMovies = async () => {
     const data = await axios.get("/data/movies.json");

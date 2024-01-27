@@ -1,8 +1,13 @@
 import React from "react";
 import "./PrimaryBtn.css";
 
-const PrimaryBtn = ({ children }) => {
-  return <button className="primary-btn">{children}</button>;
+const PrimaryBtn = ({ text, icon }) => {
+  return (
+    <button className="primary-btn">
+      {icon && icon}
+      {text}
+    </button>
+  );
 };
 
 export default PrimaryBtn;

@@ -1,4 +1,6 @@
 import { useDiscoverMovies } from "./useDiscoverMovies";
 import { useTopRatedMovies } from "./useTopRated";
 
-export { useDiscoverMovies, useTopRatedMovies };
+import { useGetMovieDetail } from "./useGetMovieDetail";
+
+export { useDiscoverMovies, useTopRatedMovies, useGetMovieDetail };

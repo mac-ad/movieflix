@@ -1,6 +1,6 @@
 import { Navigate, useRoutes } from "react-router-dom";
 import { MainLayout } from "./Layout";
-import { Home, Main } from "./Pages";
+import { Home, Main, MovieDetailPage } from "./Pages";
 import { DetectScroll } from "./HOC";
 
 export default function Router() {
@@ -48,25 +48,34 @@ export default function Router() {
       ],
     },
     {
-      path: "/movies/:movieName/:movieId/",
+      path: "/movies/:movieId",
       children: [
         {
           path: "",
-          element: <></>,
-        },
-        {
-          path: "castcrew",
-          element: <></>,
+          element: (
+            <MainLayout>
+              <MovieDetailPage />
+            </MainLayout>
+          ),
         },
       ],
     },
-    {
-      path: "/person/:personName/:personId",
-      element: <></>,
-    },
     // {
-    //   path: "/movies/:movieId/fullcredits",
-    //   element: <MovieFullCredits />,
+    //   path: "/movies/:movieName/:movieId/",
+    //   children: [
+    //     {
+    //       path: "",
+    //       element: <></>,
+    //     },
+    //     {
+    //       path: "castcrew",
+    //       element: <></>,
+    //     },
+    //   ],
+    // },
+    // {
+    //   path: "/person/:personName/:personId",
+    //   element: <></>,
     // },
     {
       path: "*",

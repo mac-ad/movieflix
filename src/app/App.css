@@ -8,8 +8,11 @@ body {
   --gray-light: #1a1a1b;
   --gray-lightest: #252526;
   --primary: #f47f21;
+  --primary-dark: rgb(212, 110, 27);
+  --transparent-white: rgba(255, 255, 255, 0.327);
 
-  font-size: 100%;
+  /* --primary: white;
+  --primary-dark: rgba(255, 255, 255, 0.485); */
 
   --fs-xxs: 0.65rem;
   --fs-xs: 0.75rem;
@@ -56,14 +59,14 @@ img {
 .logo h2 {
   text-transform: uppercase;
   background-clip: text;
-  background: linear-gradient(
+  /* background: linear-gradient(
     -90deg,
     rgb(255, 255, 255),
     rgb(255, 177, 113),
     var(--primary)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  ); */
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
 }
 
 .secondary {
@@ -90,6 +93,10 @@ a {
 
 h1 {
   font-size: var(--fs-xxxl);
+}
+
+h2 {
+  font-size: var(--fs-xxl);
 }
 
 @media only screen and (min-width: 700px) {

@@ -1,3 +1,7 @@
+.main-container {
+  padding: 1em 0;
+}
+
 .main-carousel {
   margin-bottom: 4em;
   opacity: 0.8;

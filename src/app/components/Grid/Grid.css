@@ -5,29 +5,28 @@
 }
 
 .grid-card {
-  border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
   transition: all 300ms ease;
   position: relative;
-  border: 2px solid transparent;
   height: 100%;
+  border: 2px solid transparent;
+  border-radius: 5px;
 }
 
 .grid-card img {
-  transition: all 300ms ease;
-  z-index: -1;
-  width: 100%;
+  transition: all 200ms ease;
   object-fit: cover;
   height: 100%;
+  width: 100%;
+}
+
+.grid-card:hover img {
+  transform: scale(1.05);
 }
 
 .grid-card:hover {
   border: 2px solid var(--primary);
-}
-
-.grid-card:hover img {
-  transform: scale(1.04);
 }
 
 .grid-card:before {
@@ -37,21 +36,33 @@
   width: 100%;
   left: 0;
   top: 0;
-  background: linear-gradient(transparent, var(--gray-1));
+  background: linear-gradient(transparent 10%, var(--gray-2));
   z-index: 50;
 }
 
 .grid-card .content {
   display: flex;
   flex-direction: column;
-  gap: 0.3em;
   position: absolute;
   z-index: 100;
   bottom: 0;
   right: 0;
   left: 0;
-  padding: 1em 0.5em 0.5em;
-  opacity: 0.85;
+  padding: 0 0.5em 0.5em;
+  opacity: 0.7;
+  min-height: 50px;
+}
+
+.grid-card .brief__rating {
+  position: absolute;
+  background: var(--primary-dark);
+  padding: 0.5em;
+  border-radius: 50%;
+  right: 0.5em;
+  top: 0.5em;
+  color: var(--gray-1);
+  font-size: var(--fs-s);
+  font-weight: bold;
 }
 
 .grid-card .brief {
@@ -62,7 +73,7 @@
 
 .grid-card .brief .tag {
   border-radius: 5em;
-  padding: 0.2em 0.6em;
+  /* padding: 0.2em 0.6em; */
   font-size: var(--fs-xxs);
   color: var(--gray-1);
   font-weight: 600;

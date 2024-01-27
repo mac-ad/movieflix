@@ -26,14 +26,14 @@ const Main = () => {
   }, []);
 
   return (
-    <div>
+    <div className="main-container">
       <div className="wrapper-1">
         <MainCarousel />
       </div>
       <div className="wrapper-2">
         <MainTabs />
       </div>
-      <div className="main__carousel-container latest-movies-carousel-container">
+      {/* <div className="main__carousel-container latest-movies-carousel-container">
         <h2 className="main__carousel-container__title wrapper-1">
           Latest Movies
         </h2>
@@ -46,7 +46,7 @@ const Main = () => {
         <div className="carousel-main wrapper-1">
           <Carousel items={tv} type="tv" />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

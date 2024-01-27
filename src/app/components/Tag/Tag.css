@@ -1,0 +1,12 @@
+.tag {
+  width: fit-content;
+  padding: 0.3em 1em;
+  border-radius: 5px;
+  background: var(--transparent-white);
+  opacity: 0.8;
+  transition: all 200ms ease;
+}
+
+.tag:hover {
+  opacity: 1;
+}

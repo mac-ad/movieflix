@@ -2,11 +2,12 @@ import React from "react";
 import "./Footer.css";
 import { Link } from "react-router-dom";
 import NormalLink from "../common/NormalLink";
+import Logo from "../common/Logo";
 
 const Footer = () => {
   return (
     <div className="footer-container">
-      <footer>
+      {/* <footer>
         <ul className="list">
           <NormalLink to="#">
             <li>movies</li>
@@ -20,8 +21,8 @@ const Footer = () => {
         </ul>
       </footer>
       <div className="footer-content wrapper">
-        <div className="footer-logo">
-          <img src="logo.png" alt="" />
+        
+          <Logo />
         </div>
         <p className="secondary-text">
           HuraMovies is the leading free movie streaming website that allows you
@@ -31,7 +32,7 @@ const Footer = () => {
           overlook HuraMovies, as it unquestionably reigns as the premier
           platform in this realm!
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };

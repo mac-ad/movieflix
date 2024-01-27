@@ -5,6 +5,8 @@ import "./nav.css";
 import Button1 from "../common/Button1";
 import TransparentBgBtn from "../common/TransparentBgBtn";
 import { Link } from "react-router-dom";
+import Logo from "../common/Logo";
+import { navItems } from "../../statics/constants";
 
 const Nav = () => {
   const [showMobNav, setShowMobNav] = useState(false);
@@ -25,47 +27,35 @@ const Nav = () => {
           <div className="burger" onClick={mobileNavHandler}>
             <FontAwesomeIcon icon={faBars} />
           </div>
-
-          <div className="logo">
-            {/* <img src="logo.png" alt="" /> */}
-            <h2>movieflix</h2>
-          </div>
+          <Logo />
         </div>
         <ul className="nav-list desktop">
-          <TransparentBgBtn>
-            <Link to="/browse">
-              <li>browse</li>
-            </Link>
-          </TransparentBgBtn>
-          <TransparentBgBtn>
-            <Link to="/movies">
-              <li>movies</li>
-            </Link>
-          </TransparentBgBtn>
-          <TransparentBgBtn>
-            <Link to="/tv-shows">
-              <li>tv shows</li>
-            </Link>
-          </TransparentBgBtn>
+          {navItems.map((item, index) => (
+            <TransparentBgBtn key={`${item}${index}`}>
+              <Link to={item.route}>
+                <li>{item.name}</li>
+              </Link>
+            </TransparentBgBtn>
+          ))}
         </ul>
-        <Button1 className="search-icon icon" onClick={showSearchHandler}>
+        {/* <Button1 className="search-icon icon" onClick={showSearchHandler}>
           <FontAwesomeIcon icon={faSearch} />
-        </Button1>
-        <div className={`search-container ${showSearch ? "visible" : ""}`}>
+        </Button1> */}
+        {/* <div className={`search-container ${showSearch ? "visible" : ""}`}>
           <div className="icon">
             <FontAwesomeIcon icon={faSearch} />
           </div>
           <input type="text" placeholder="Search" />
           <button className="filter-icon">Filter</button>
-        </div>
+        </div> */}
         <div className="overlay" onClick={showSearchHandler}></div>
-        <div className="search-container-desktop">
+        {/* <div className="search-container-desktop">
           <div className="icon">
             <FontAwesomeIcon icon={faSearch} />
           </div>
           <input type="text" placeholder="Search" />
           <button className="filter-icon">Filter</button>
-        </div>
+        </div> */}
       </nav>
       <ul className={`nav-list mobile ${showMobNav ? "visible" : ""}`}>
         <TransparentBgBtn>

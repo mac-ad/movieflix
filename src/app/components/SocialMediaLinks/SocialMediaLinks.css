@@ -1,0 +1,15 @@
+.social-media-links-wrapper {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-media-links-wrapper a {
+  opacity: 0.5;
+  transition: all 200ms ease;
+}
+
+.social-media-links-wrapper a:hover {
+  opacity: 1;
+}

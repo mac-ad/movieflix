@@ -8,6 +8,9 @@ import Tabs from "./Tabs";
 import MainTabs from "./MainTabs";
 import Grid from "./Grid";
 import Carousel from "./Carousel";
+import Logo from "./common/Logo";
+import SocialMediaLinks from "./SocialMediaLinks";
+import Tag from "./Tag";
 
 export {
   Nav,
@@ -20,4 +23,7 @@ export {
   MainTabs,
   Grid,
   Carousel,
+  Logo,
+  SocialMediaLinks,
+  Tag,
 };

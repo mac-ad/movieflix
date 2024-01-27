@@ -29,6 +29,7 @@ nav .burger {
 nav > div,
 nav ul {
   display: flex;
+  align-items: center;
 }
 
 nav ul li {
@@ -67,115 +68,9 @@ nav ul li {
   transform: scaleY(1);
 }
 
-nav .search-container {
-  display: none;
-  padding: 0.4em 1em;
-  border-radius: 3px;
-  background: var(--gray-2);
-  position: absolute;
-  top: 1em;
-  left: 1em;
-  right: 1em;
-  border: 1px solid rgba(255, 255, 255, 0.276);
-  z-index: 999;
-}
-
-nav .search-container.visible {
-  display: flex;
-  align-items: center;
-  gap: 0;
-}
-
-nav .search-icon {
-  font-size: var(--fs-l);
-}
-
-nav .search-container ~ .overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
-  display: none;
-}
-
-nav .search-container.visible ~ .overlay {
-  display: unset;
-}
-
-nav .search-container input {
-  background: transparent;
-  border: none;
-  color: white;
-  outline: none;
-  font-size: var(--fs-n);
-  padding: 0.5em 1em;
-  width: 100%;
-}
-
-nav .search-container .filter-icon {
-  background: rgba(255, 255, 255, 0.233);
-  border: none;
-  color: white;
-  position: absolute;
-  right: 0;
-  height: 100%;
-  padding: 0 1em;
-}
-
-nav .search-container .icon {
-  opacity: 0.3;
-}
-
-.search-container-desktop {
-  display: none;
-  margin-left: auto;
-  border: 1px solid red;
-  align-items: center;
-  width: 50%;
-  max-width: 25rem;
-  padding: 0 0 0 0.5em;
-  border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.31);
-}
-
-.search-container-desktop input {
-  background: none;
-  color: white;
-  padding: 0.3em 1em;
-  outline: none;
-  width: 100%;
-  border: none;
-}
-
-.search-container-desktop .filter-icon {
-  background: rgba(255, 255, 255, 0.233);
-  color: white;
-  border: none;
-  padding: 0.7em 1em;
-}
-
 @media only screen and (min-width: 600px) {
   nav {
     justify-content: flex-start;
-  }
-
-  nav .search-icon {
-    margin-left: auto;
-  }
-
-  nav .search-icon {
-    display: none;
-  }
-
-  nav .search-container {
-    display: none;
-  }
-
-  .search-container-desktop {
-    display: flex;
   }
 }
 
@@ -186,7 +81,7 @@ nav .search-container .icon {
 
   .nav-list.desktop {
     display: flex;
-    margin-left: 2em;
+    margin-left: auto;
     gap: 1em;
   }
 }

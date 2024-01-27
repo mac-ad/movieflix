@@ -14,7 +14,7 @@ const Home = () => {
       </p>
 
       <Link to="/home">
-        <PrimaryBtn className="button">Open Homepage</PrimaryBtn>
+        <PrimaryBtn className="button" text="Open Homepage" />
       </Link>
     </div>
   );
