@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { EffectCards, Pagination } from "swiper/modules";
 
-import { large, original } from "../../statics";
+import { large, medium, original } from "../../statics";
 import { useEffect, useRef } from "react";
 
 const movies = [

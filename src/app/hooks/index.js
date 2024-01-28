@@ -1,6 +1,11 @@
 import { useDiscoverMovies } from "./useDiscoverMovies";
 import { useTopRatedMovies } from "./useTopRated";
-
 import { useGetMovieDetail } from "./useGetMovieDetail";
+import { useFetchMainContent } from "./useFetchMainContents";
 
-export { useDiscoverMovies, useTopRatedMovies, useGetMovieDetail };
+export {
+  useFetchMainContent,
+  useDiscoverMovies,
+  useTopRatedMovies,
+  useGetMovieDetail,
+};

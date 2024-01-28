@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { large } from "../../statics/";
+import { getRating } from "../../utils/helpers";
 
 const GridCard = ({ item, type }) => {
   const navigate = useNavigate();
@@ -11,10 +12,10 @@ const GridCard = ({ item, type }) => {
   return (
     <div className="grid-card" onClick={clickHandler}>
       <img src={`${large}${item?.poster_path}`} alt="" />
-      {type != "both" ? (
+      {
         <div className="content">
           <p className="title">
-            {type == "movie" ? item?.title : item?.original_name}
+            {item?.title ? item.title : item?.original_name}
           </p>
           <div className="brief">
             {/* <span className="tag bg-primary">{type}</span>
@@ -23,16 +24,9 @@ const GridCard = ({ item, type }) => {
             )} */}
           </div>
         </div>
-      ) : (
-        <div className="content">
-          <p className="title"></p>
-          <div className="brief">
-            {/* <span className="tag bg-primary">movie</span>
-            <span className="tag bg-green">2023 -124 min</span> */}
-          </div>
-        </div>
-      )}
-      <span className="brief__rating">{item.vote_average}</span>
+      }
+      <span className="brief__rating">{getRating(item.vote_average)}</span>
+      {type === "both" && <span className="type">{item.media}</span>}
     </div>
   );
 };

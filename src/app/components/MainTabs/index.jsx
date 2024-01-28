@@ -4,39 +4,26 @@ import { Grid } from "../index";
 import { useState, useEffect } from "react";
 import { mainTabsList } from "../../statics";
 import { useNavigate } from "react-router-dom";
+import { useFetchMainContent } from "../../hooks/index";
 
 const MainTabs = () => {
   const [activeTab, setActiveTab] = useState(0);
 
-  const [movies, setMovies] = useState([]);
-  const [tv, setTv] = useState([]);
+  const [movies, tvs, trending] = useFetchMainContent();
 
   const navigate = useNavigate();
-
-  const fetchMovies = async () => {
-    const data = await axios.get("/data/movies.json");
-    setMovies(data.data.results);
-  };
-
-  const fetchTv = async () => {
-    const data = await axios.get("/data/tv.json");
-    setTv(data.data.results);
-  };
 
   const tabClickHandler = (e) => {
     const id = e.target.dataset.tabid;
     setActiveTab(id);
   };
 
-  useEffect(() => {
-    fetchMovies();
-    fetchTv();
-  }, []);
+  console.log(movies, tvs, trending);
 
   return (
     <div className="mainTabs-container">
       <div className="mainTabs-container__header">
-        <h2>Recommended</h2>
+        <h2>Popular</h2>
         <ul className="tabs">
           {mainTabsList.map((item, index) => (
             <li
@@ -53,7 +40,7 @@ const MainTabs = () => {
       <div className="mainTabs-container__content">
         {activeTab == 0 && (
           <>
-            {movies.length > 0 ? (
+            {movies?.length > 0 ? (
               <Grid items={movies} type="movie" />
             ) : (
               "...loading"
@@ -61,12 +48,12 @@ const MainTabs = () => {
           </>
         )}
         {activeTab == 1 && (
-          <>{tv.length > 0 ? <Grid items={tv} type="tv" /> : "...loading"}</>
+          <>{tvs?.length > 0 ? <Grid items={tvs} type="tv" /> : "...loading"}</>
         )}
         {activeTab == 2 && (
           <>
-            {movies.length > 0 ? (
-              <Grid items={movies} type="both" />
+            {trending?.length > 0 ? (
+              <Grid items={trending} type="both" />
             ) : (
               "...loading"
             )}

@@ -52,6 +52,7 @@ export const apiEndPoints = {
     tvGenreList: `${baseUrlV3}/genre/tv/list?language=en-US`,
   },
   language: `${baseUrlV3}/configuration/languages`,
+  trendingAllDay: `${baseUrlV3}/trending/all/day`,
 };
 
 export const blurPlaceholder =

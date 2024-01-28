@@ -23,7 +23,7 @@ body {
   --fs-xxl: 2rem;
   --fs-xxxl: 2.5rem;
 
-  --nav-height: 70px;
+  --nav-height: 60px;
   --card-height: 350px;
 
   background: var(--gray-2);
@@ -59,14 +59,15 @@ img {
 .logo h2 {
   text-transform: uppercase;
   background-clip: text;
-  /* background: linear-gradient(
-    -90deg,
-    rgb(255, 255, 255),
-    rgb(255, 177, 113),
-    var(--primary)
-  ); */
-  /* -webkit-background-clip: text; */
-  /* -webkit-text-fill-color: transparent; */
+}
+
+.logo {
+  opacity: 0.7;
+  transition: 300ms ease;
+}
+
+.logo:hover {
+  opacity: 1;
 }
 
 .secondary {
@@ -92,14 +93,18 @@ a {
 }
 
 h1 {
-  font-size: var(--fs-xxxl);
-}
-
-h2 {
   font-size: var(--fs-xxl);
 }
 
+h2 {
+  font-size: var(--fs-xl);
+}
+
 @media only screen and (min-width: 700px) {
+  body {
+    --fs-xl: 1.7rem;
+  }
+
   .wrapper,
   .wrapper-1,
   .wrapper-2 {

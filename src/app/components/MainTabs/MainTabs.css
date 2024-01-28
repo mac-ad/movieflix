@@ -5,6 +5,9 @@
   align-items: center;
 }
 
+.mainTabs-container__header {
+}
+
 .mainTabs-container__header ul {
   flex-direction: row;
   gap: 1em;
@@ -13,7 +16,8 @@
 .mainTabs-container__header {
   justify-content: center;
   gap: 0.5em;
-  margin-bottom: 1.5em;
+  margin-top: 5em;
+  margin-bottom: 3em;
 }
 
 .mainTabs-container__header .tabs {
@@ -25,7 +29,7 @@
 .mainTabs-container__header ul li {
   padding: 0.5em 0.7em;
   border-radius: 5em;
-  font-size: var(--fs-s);
+  font-size: var(--fs-m);
   color: rgba(255, 255, 255, 0.693);
   text-transform: capitalize;
 }
@@ -42,7 +46,5 @@
 @media only screen and (min-width: 700px) {
   .mainTabs-container__header {
     gap: 1em;
-    flex-direction: row;
-    justify-content: flex-start;
   }
 }

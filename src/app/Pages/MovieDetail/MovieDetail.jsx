@@ -76,7 +76,7 @@ const MovieDetail = ({
             </div>
             <span className="genre">
               {genres?.map((item) => (
-                <Link to="/genre/drama">
+                <Link key={item.id} to="/genre/drama">
                   <Tag name={item.name} />
                 </Link>
               ))}
@@ -85,10 +85,10 @@ const MovieDetail = ({
           <i className="tag-line">{tagline}</i>
           <p className="overview">{overview}</p>
           <div className="rating">
-            <h1>{rating}</h1>
-            <p className="secondary">
+            <h2>{rating}</h2>
+            <div className="secondary">
               <h3>/10</h3>
-            </p>
+            </div>
           </div>
           <div className="crew-container">
             {crewData?.map((crew) => (

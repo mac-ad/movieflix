@@ -1,10 +1,12 @@
 .movie-detail-container {
   /* max-height: 80vh; */
+  --poster-width: 300px;
 }
 
 .movie-detail-container__backdrop {
   position: absolute;
   height: 100%;
+  width: 100%;
   z-index: -1;
 }
 
@@ -16,11 +18,21 @@
   height: 100%;
   width: 100%;
   background: linear-gradient(
-    0deg,
-    rgb(18, 18, 18),
-    rgba(21, 21, 21, 0.813),
-    rgba(21, 21, 21, 0.5)
+    90deg,
+    rgb(235, 170, 14),
+    rgba(218, 46, 67, 0.557)
   );
+}
+
+.movie-detail-container__backdrop::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  background: linear-gradient(0deg, var(--gray-1), rgba(21, 21, 21, 0.692));
 }
 
 .movie-detail-container .actions button svg {
@@ -40,6 +52,7 @@
 .movie-detail-container__content {
   z-index: 999;
   padding: 2em 0;
+  padding-top: calc(var(--nav-height) + 2em);
 }
 
 .movie-detail-container__content .main__content {
@@ -51,7 +64,10 @@
 }
 
 .movie-detail-container__content .main__content .poster {
+  box-shadow: rgba(12, 12, 12, 0.4) 0px 0px 2rem;
   max-width: 250px;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .movie-detail-container .main__content .actions {
@@ -76,6 +92,7 @@
 .movie__details .title {
   display: flex;
   gap: 0.2em;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-weight: 500;
@@ -117,6 +134,7 @@
 
 .movie__details p.overview {
   opacity: 0.8;
+  max-width: 80ch;
 }
 
 .movie__details .crew-container {
@@ -184,9 +202,9 @@
 
   .movie-detail-container__content {
     display: grid;
-    grid-template-columns: minmax(250px, 350px) 1fr;
+    grid-template-columns: minmax(250px, var(--poster-width)) 1fr;
     align-items: flex-start;
-    gap: 2em;
+    gap: 3em;
   }
 
   .movie-detail-container__content .actions {
@@ -217,6 +235,10 @@
     justify-content: unset;
   }
 
+  .movie__details .title {
+    flex-direction: row;
+  }
+
   .movie__details .flex {
     align-items: flex-start;
   }
@@ -234,7 +256,7 @@
   }
 
   .movie-detail-container__content .main__content .poster {
-    max-width: 350px;
+    max-width: 300px;
   }
 }
 
