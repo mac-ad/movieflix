@@ -13,11 +13,24 @@
   gap: 1em;
 }
 
+.mainTabs-container__content > div {
+  /* display: flex;
+  flex-direction: column;
+  gap: 3em; */
+}
+
+.mainTabs-container__content h1 {
+  margin-bottom: 1em;
+  margin-top: 2em;
+  width: fit-content;
+  margin-inline: auto;
+}
+
 .mainTabs-container__header {
   justify-content: center;
   gap: 0.5em;
   margin-top: 5em;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
 }
 
 .mainTabs-container__header .tabs {

@@ -4,32 +4,34 @@ import { Grid } from "../index";
 import { useState, useEffect } from "react";
 import { mainTabsList } from "../../statics";
 import { useNavigate } from "react-router-dom";
-import { useFetchMainContent } from "../../hooks/index";
+import { useTabs } from "../../hooks/index";
 
-const MainTabs = () => {
-  const [activeTab, setActiveTab] = useState(0);
+import { motion } from "framer-motion";
+import { MinHeightContainer } from "../../HOC/MinHeightContainer";
 
-  const [movies, tvs, trending] = useFetchMainContent();
+const MainTabs = ({ movies, tvs, trending, trendingMovies, trendingTvs }) => {
+  // const [activeTab, setActiveTab] = useState("movies");
+  const { activeTab, setTab } = useTabs({
+    tabLocation: "mainTab",
+    defaultState: "movies",
+  });
 
   const navigate = useNavigate();
 
   const tabClickHandler = (e) => {
-    const id = e.target.dataset.tabid;
-    setActiveTab(id);
+    const id = e.target.dataset.tabkey;
+    setTab(id);
   };
-
-  console.log(movies, tvs, trending);
 
   return (
     <div className="mainTabs-container">
       <div className="mainTabs-container__header">
-        <h2>Popular</h2>
         <ul className="tabs">
           {mainTabsList.map((item, index) => (
             <li
               key={`${item}${index}`}
-              className={`transparentBgBtn ${activeTab == index && "active"}`}
-              data-tabid={index}
+              className={`transparentBgBtn ${activeTab == item && "active"}`}
+              data-tabkey={item}
               onClick={tabClickHandler}
             >
               {item}
@@ -38,26 +40,66 @@ const MainTabs = () => {
         </ul>
       </div>
       <div className="mainTabs-container__content">
-        {activeTab == 0 && (
+        {activeTab == "movies" && (
+          <motion.div
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1 },
+            }}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            transition={{ duration: 0.8 }}
+          >
+            {/* <MinHeightContainer height="100vh"> */}
+            <h1>What's Popular</h1>
+            <Grid items={movies} type="movie" />
+            {/* </MinHeightContainer> */}
+            {/* <MinHeightContainer height="100vh"> */}
+            <h1>Trending Today</h1>
+            <Grid items={trendingMovies} type="movie" />
+            {/* </MinHeightContainer> */}
+          </motion.div>
+        )}
+        {activeTab == "tv shows" && (
           <>
-            {movies?.length > 0 ? (
-              <Grid items={movies} type="movie" />
-            ) : (
-              "...loading"
-            )}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1 },
+              }}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              transition={{ duration: 0.8 }}
+            >
+              {/* <MinHeightContainer height="100vh"> */}
+              <h1>What's Popular</h1>
+              <Grid items={tvs} type="tv" />
+              {/* </MinHeightContainer> */}
+              {/* <MinHeightContainer height="100vh"> */}
+              <h1>Trending Today</h1>
+              <Grid items={trendingTvs} type="tv" />
+              {/* </MinHeightContainer> */}
+            </motion.div>
           </>
         )}
-        {activeTab == 1 && (
-          <>{tvs?.length > 0 ? <Grid items={tvs} type="tv" /> : "...loading"}</>
-        )}
-        {activeTab == 2 && (
-          <>
-            {trending?.length > 0 ? (
-              <Grid items={trending} type="both" />
-            ) : (
-              "...loading"
-            )}
-          </>
+        {activeTab == "trending" && (
+          <motion.div
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1 },
+            }}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            transition={{ duration: 0.8 }}
+          >
+            {/* <MinHeightContainer height="100vh"> */}
+            <h1>What&#39;s Trending</h1>
+            <Grid items={trending} type="both" />
+            {/* </MinHeightContainer> */}
+          </motion.div>
         )}
       </div>
     </div>

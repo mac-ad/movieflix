@@ -10,9 +10,10 @@ body {
   --primary: #f47f21;
   --primary-dark: rgb(212, 110, 27);
   --transparent-white: rgba(255, 255, 255, 0.327);
+  --green-transparent: rgba(16, 191, 16, 0.732);
 
-  /* --primary: white;
-  --primary-dark: rgba(255, 255, 255, 0.485); */
+  --primary: white;
+  --primary-dark: rgba(255, 255, 255, 0.485);
 
   --fs-xxs: 0.65rem;
   --fs-xs: 0.75rem;
@@ -76,6 +77,14 @@ img {
 
 button {
   cursor: pointer;
+}
+
+.button-click {
+  transition: all 1s ease;
+}
+
+.button-click:active {
+  transform: scale(0.6);
 }
 
 .secondary-text {

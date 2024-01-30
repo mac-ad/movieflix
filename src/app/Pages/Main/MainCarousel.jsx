@@ -156,11 +156,11 @@ const MainCarousel = ({ items }) => {
         {movies.map((movie) => (
           <swiper-slide key={movie.id} className="carousel-item">
             <div className="carousel-content">
-              <div className="info">
+              {/* <div className="info">
                 <h2>{movie.original_title}</h2>
                 <p className="description secondary">{movie?.overview}</p>
                 <button>See Details</button>
-              </div>
+              </div> */}
               <div className="image">
                 <img src={`${original}${movie.backdrop_path}`} alt="" />
               </div>

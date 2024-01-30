@@ -36,7 +36,7 @@
   width: 100%;
   left: 0;
   top: 0;
-  background: linear-gradient(transparent 10%, var(--gray-2));
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
   z-index: 50;
 }
 
@@ -57,18 +57,36 @@
   position: absolute;
   background: var(--primary-dark);
   padding: 0.5em;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   right: 0.5em;
   top: 0.5em;
   color: var(--gray-1);
   font-size: var(--fs-s);
   font-weight: bold;
+  z-index: 500;
 }
 
 .grid-card .brief {
   display: flex;
   align-items: center;
   gap: 0.5em;
+}
+
+.grid-card .media-type {
+  position: absolute;
+  z-index: 500;
+  background: var(--green-transparent);
+  top: 0.5em;
+  left: 0.5em;
+  border-radius: 5em;
+  padding: 0.3em 0.6em;
+  font-size: var(--fs-xs);
+  font-weight: bold;
 }
 
 .grid-card .brief .tag {

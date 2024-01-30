@@ -1,16 +1,28 @@
 import { useNavigate } from "react-router-dom";
 import { large } from "../../statics/";
 import { getRating } from "../../utils/helpers";
+import { useEffect, useRef } from "react";
 
 const GridCard = ({ item, type }) => {
+  const cardRef = useRef(null);
+
   const navigate = useNavigate();
 
   const clickHandler = (e) => {
-    navigate(`/movies/${item.id}`);
+    // cardRef.current.addEventListener("transitionend", (e) => {
+    //   console.log("animation ended");
+    // });
+    // navigate(`/movies/${item.id}`);
   };
 
+  useEffect(() => {}, []);
+
   return (
-    <div className="grid-card" onClick={clickHandler}>
+    <div
+      className="grid-card  button-click"
+      ref={cardRef}
+      onClick={clickHandler}
+    >
       <img src={`${large}${item?.poster_path}`} alt="" />
       {
         <div className="content">
@@ -26,7 +38,9 @@ const GridCard = ({ item, type }) => {
         </div>
       }
       <span className="brief__rating">{getRating(item.vote_average)}</span>
-      {type === "both" && <span className="type">{item.media}</span>}
+      {type === "both" && (
+        <span className="media-type">{item?.media_type?.toUpperCase()}</span>
+      )}
     </div>
   );
 };

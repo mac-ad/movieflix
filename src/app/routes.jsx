@@ -8,9 +8,10 @@ export default function Router() {
     {
       path: "/",
       element: (
-        <MainLayout>
-          <Home />
-        </MainLayout>
+        // <MainLayout>
+        //   <Home />
+        // </MainLayout>
+        <Navigate to="/home" />
       ),
     },
     {

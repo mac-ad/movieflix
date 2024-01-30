@@ -5,25 +5,11 @@ import { Carousel, MainTabs } from "../../components";
 
 import MainCarousel from "./MainCarousel";
 import axios from "axios";
+import { useFetchMainContent } from "../../hooks";
 
 const Main = () => {
-  const [movies, setMovies] = useState([]);
-  const [tv, setTv] = useState([]);
-
-  const fetchMovies = async () => {
-    const data = await axios.get("/data/movies.json");
-    setMovies(data.data.results);
-  };
-
-  const fetchTv = async () => {
-    const data = await axios.get("/data/tv.json");
-    setTv(data.data.results);
-  };
-
-  useEffect(() => {
-    fetchMovies();
-    fetchTv();
-  }, []);
+  const [movies, tvs, trending, trendingMovies, trendingTvs] =
+    useFetchMainContent();
 
   return (
     <div className="main-container">
@@ -31,7 +17,13 @@ const Main = () => {
         <MainCarousel />
       </div>
       <div className="wrapper-2">
-        <MainTabs />
+        <MainTabs
+          movies={movies}
+          tvs={tvs}
+          trending={trending}
+          trendingMovies={trendingMovies}
+          trendingTvs={trendingTvs}
+        />
       </div>
       {/* <div className="main__carousel-container latest-movies-carousel-container">
         <h2 className="main__carousel-container__title wrapper-1">
