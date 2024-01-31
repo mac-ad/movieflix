@@ -6,7 +6,7 @@ body {
   --gray-1: #131213;
   --gray-2: #111010;
   --gray-light: #1a1a1b;
-  --gray-lightest: #252526;
+  --gray-lightest: #3a3a3d;
   --primary: #f47f21;
   --primary-dark: rgb(212, 110, 27);
   --transparent-white: rgba(255, 255, 255, 0.327);
@@ -39,10 +39,21 @@ li {
 
 img {
   width: 100%;
+  display: block;
 }
 
 .wrapper {
   width: 95%;
+}
+
+.wrapper,
+.wrapper-full {
+  max-width: 1700px;
+  margin-inline: auto;
+}
+
+.wrapper-full {
+  width: 100%;
   margin-inline: auto;
 }
 
@@ -81,6 +92,16 @@ button {
 
 .button-click {
   transition: all 1s ease;
+}
+
+.loading-svg {
+  animation: loading 400ms linear infinite;
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .button-click:active {

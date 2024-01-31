@@ -1,0 +1,74 @@
+.poster-card {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.poster-card img {
+  filter: brightness(80%);
+}
+
+.poster-card:before {
+  /* content: ""; */
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(0deg, var(--gray-2), transparent);
+}
+
+.download-icon {
+  width: fit-content;
+  height: 30px;
+  width: 30px;
+  background: var(--primary);
+  color: var(--gray-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+  z-index: 500;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.download-icon button {
+  background: none;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.download-icon:hover {
+  opacity: 1;
+}
+
+.backdrop-card {
+  position: relative;
+  cursor: pointer;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.backdrop-card .image {
+  overflow: hidden;
+}
+
+.backdrop-card .image img {
+  height: 100%;
+  width: 100%;
+  transition: all 300ms ease;
+}
+
+.backdrop-card .image img:hover {
+  transform: scale(1.04);
+}

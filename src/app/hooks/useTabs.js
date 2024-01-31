@@ -6,6 +6,8 @@ export const useTabs = ({ tabLocation, defaultState = "" }) => {
   useEffect(() => {
     const tabStates = JSON.parse(localStorage.getItem("tabStates")) || {};
 
+    console.log(tabStates);
+
     if (tabStates[tabLocation]) {
       setActiveTab(tabStates[tabLocation]);
     } else {

@@ -1,5 +1,5 @@
 import Swiper from "swiper/react";
-import GridCard from "../Grid/GridCard";
+// import GridCard from "../Grid/GridCard";
 import "./Carousel.css";
 import { useRef, useEffect } from "react";
 
@@ -66,7 +66,7 @@ const Carousel = ({ items, type }) => {
       <swiper-container ref={swiperRef} space-between="10" navigation="true">
         {items.map((item) => (
           <swiper-slide key={item.id}>
-            <GridCard item={item} type={type} />
+            {/* <GridCard item={item} type={type} /> */}
           </swiper-slide>
         ))}
       </swiper-container>

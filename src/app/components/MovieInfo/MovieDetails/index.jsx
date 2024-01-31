@@ -1,12 +1,18 @@
-import { original } from "../../statics";
-import PrimaryBtn from "../../components/common/PrimaryBtn";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { SocialMediaLinks, Tag } from "../../components";
 import { Link } from "react-router-dom";
 
 import countryToCurrency from "country-to-currency";
 import getSymbolFromCurrency from "currency-symbol-map";
+import { original } from "../../../statics";
+import PrimaryBtn from "../../common/PrimaryBtn";
+import SocialMediaLinks from "../../SocialMediaLinks";
+
+import "./MovieDetail.css";
+import { Facts } from "./Facts";
+import MovieTab from "../MovieTab";
+import Tag from "../../Tag";
+import MovieRecommendations from "./MovieRecommendations";
 
 const MovieDetail = ({
   id,
@@ -92,7 +98,7 @@ const MovieDetail = ({
           </div>
           <div className="crew-container">
             {crewData?.map((crew) => (
-              <div className="crew">
+              <div key={crew.id} className="crew">
                 <p>{crew.job}</p>
                 <Link to={`/preson/${crew.id}`}>{crew.name}</Link>
               </div>
@@ -100,32 +106,23 @@ const MovieDetail = ({
           </div>
         </div>
       </div>
-      <div className="facts wrapper">
-        <h2 className="secondary">Facts</h2>
-        <ul>
-          <li>
-            <p className="secondary">Status</p>
-            <span>{status}</span>
-          </li>
-          <li>
-            <p className="secondary">Language</p>
-            <span>{language}</span>
-          </li>
-          <li>
-            <p className="secondary">Budget</p>
-            <span>
-              {currency}
-              {budget?.toLocaleString()}
-            </span>
-          </li>
-          <li>
-            <p className="secondary">Revenue</p>
-            <span>
-              {currency}
-              {revenue?.toLocaleString()}
-            </span>
-          </li>
-        </ul>
+      <Facts
+        budget={budget}
+        currency={currency}
+        revenue={revenue}
+        language={language}
+        status={status}
+      />
+      <MovieTab
+        cast={cast?.data}
+        posters={posters}
+        backdrops={backdrops}
+        reviews={reviews}
+      />
+      <div className="wrapper">
+        {recommendations.length > 0 && (
+          <MovieRecommendations movies={recommendations} />
+        )}
       </div>
     </div>
   );

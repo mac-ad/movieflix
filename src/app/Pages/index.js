@@ -1,5 +1,5 @@
 import Home from "./Home";
 import Main from "./Main";
-import MovieDetailPage from "./MovieDetail";
+import MovieDetailPage from "./MovieDetailPage";
 
 export { Home, Main, MovieDetailPage };

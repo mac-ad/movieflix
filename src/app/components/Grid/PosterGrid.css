@@ -1,0 +1,21 @@
+.poster-grid-container {
+  gap: 0.5em;
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.poster-grid-container img {
+}
+
+@media only screen and (min-width: 600px) {
+  .poster-grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .poster-grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  }
+}

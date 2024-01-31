@@ -7,12 +7,17 @@ import {
   getRuntime,
 } from "../utils/helpers";
 import { apiEndPoints } from "../statics/constants";
+import { useParams } from "react-router-dom";
 
 export const useGetMovieDetail = ({ movieId }) => {
+  const { movieId: id } = useParams();
+
   const [movieDetail, setMovieDetail] = useState({});
 
   useEffect(() => {
     (async () => {
+      console.log("getting movie detail");
+
       const [movieResponse, languagesResponse] = await Promise.all([
         fetch(apiEndPoints.movie.movieDetails(movieId), fetchOptions()),
         fetch(apiEndPoints.language, fetchOptions()),
@@ -86,9 +91,11 @@ export const useGetMovieDetail = ({ movieId }) => {
         country,
       };
 
+      console.log("got movie detail", movieDetail);
+
       setMovieDetail(detail);
     })();
-  }, []);
+  }, [id]);
 
   return [movieDetail];
 };

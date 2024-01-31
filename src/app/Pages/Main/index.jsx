@@ -1,21 +1,24 @@
 import "./Main.css";
 
 import React, { useEffect, useState } from "react";
-import { Carousel, MainTabs } from "../../components";
+import { Carousel, Hero, MainTabs } from "../../components";
 
 import MainCarousel from "./MainCarousel";
 import axios from "axios";
 import { useFetchMainContent } from "../../hooks";
+import BackdropHeroBanner from "../../components/Hero/BackdropHeroBanner";
 
 const Main = () => {
-  const [movies, tvs, trending, trendingMovies, trendingTvs] =
+  const [movies, tvs, trending, trendingMovies, trendingTvs, posters] =
     useFetchMainContent();
 
   return (
     <div className="main-container">
-      <div className="wrapper-1">
-        <MainCarousel />
-      </div>
+      <div className="wrapper-1">{/* <MainCarousel /> */}</div>
+
+      {/* hero section search and backdrop posters */}
+      <Hero banner={<BackdropHeroBanner posters={posters} />} />
+
       <div className="wrapper-2">
         <MainTabs
           movies={movies}

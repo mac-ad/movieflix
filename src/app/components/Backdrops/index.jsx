@@ -1,8 +1,13 @@
 import "./Backdrops.css";
 
-// const Backdrops = () => {
+const Backdrops = ({ backdrops }) => {
+  return (
+    <>
+      {backdrops?.length > 0 ? (
+        <div className="backdrops-container">backdrop</div>
+      ) : null}
+    </>
+  );
+};
 
-//     return (
-
-//     )
-// }
+export default Backdrops;

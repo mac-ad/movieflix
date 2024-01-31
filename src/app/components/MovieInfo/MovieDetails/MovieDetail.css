@@ -1,5 +1,4 @@
 .movie-detail-container {
-  /* max-height: 80vh; */
   --poster-width: 300px;
 }
 
@@ -8,6 +7,7 @@
   height: 100%;
   width: 100%;
   z-index: -1;
+  max-height: 100vh;
 }
 
 .movie-detail-container__backdrop::before {
@@ -32,7 +32,7 @@
   height: 100%;
   width: 100%;
   z-index: 100;
-  background: linear-gradient(0deg, var(--gray-1), rgba(21, 21, 21, 0.692));
+  background: linear-gradient(0deg, var(--gray-2), rgba(21, 21, 21, 0.743));
 }
 
 .movie-detail-container .actions button svg {
@@ -195,9 +195,16 @@
   padding: 2em;
 }
 
+.recommendations-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+}
+
 @media only screen and (min-width: 700px) {
   .movie-detail-container__backdrop {
-    height: 60vh;
+    height: 100vh;
   }
 
   .movie-detail-container__content {

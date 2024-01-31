@@ -1,6 +1,6 @@
 import "./MainTabs.css";
 import axios from "axios";
-import { Grid } from "../index";
+import { Grid, Tabs } from "../index";
 import { useState, useEffect } from "react";
 import { mainTabsList } from "../../statics";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +8,21 @@ import { useTabs } from "../../hooks/index";
 
 import { motion } from "framer-motion";
 import { MinHeightContainer } from "../../HOC/MinHeightContainer";
+
+const tabList = [
+  {
+    key: "movies",
+    name: "movies",
+  },
+  {
+    key: "tv",
+    name: "tv shows",
+  },
+  {
+    key: "trending",
+    name: "trending",
+  },
+];
 
 const MainTabs = ({ movies, tvs, trending, trendingMovies, trendingTvs }) => {
   // const [activeTab, setActiveTab] = useState("movies");
@@ -26,7 +41,7 @@ const MainTabs = ({ movies, tvs, trending, trendingMovies, trendingTvs }) => {
   return (
     <div className="mainTabs-container">
       <div className="mainTabs-container__header">
-        <ul className="tabs">
+        {/* <ul className="tabs">
           {mainTabsList.map((item, index) => (
             <li
               key={`${item}${index}`}
@@ -37,7 +52,8 @@ const MainTabs = ({ movies, tvs, trending, trendingMovies, trendingTvs }) => {
               {item}
             </li>
           ))}
-        </ul>
+        </ul> */}
+        <Tabs tabList={tabList} currentTab={activeTab} setTab={setTab} />
       </div>
       <div className="mainTabs-container__content">
         {activeTab == "movies" && (
@@ -61,7 +77,7 @@ const MainTabs = ({ movies, tvs, trending, trendingMovies, trendingTvs }) => {
             {/* </MinHeightContainer> */}
           </motion.div>
         )}
-        {activeTab == "tv shows" && (
+        {activeTab == "tv" && (
           <>
             <motion.div
               variants={{

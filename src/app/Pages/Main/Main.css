@@ -1,6 +1,6 @@
 .main-container {
   padding: 1em 0;
-  padding-top: calc(var(--nav-height) + 2em);
+  padding-top: calc(var(--nav-height));
 }
 
 .main-carousel {
