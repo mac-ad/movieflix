@@ -16,6 +16,8 @@ A movie info website that uses the TMDB API for data.
 
 - Search functionality
 - Details functionality
+  - recommendations grid incomplete
+  - changing of route doesnot call useMovieDetail hook again
 - home carousel
 
 ```
