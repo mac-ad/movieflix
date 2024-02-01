@@ -105,7 +105,7 @@ button {
 }
 
 .button-click:active {
-  transform: scale(0.6);
+  transform: scale(0.95);
 }
 
 .secondary-text {

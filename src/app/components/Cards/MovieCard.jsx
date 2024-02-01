@@ -17,7 +17,7 @@ const MovieCard = ({ data, useImg }) => {
 
   return (
     <Link to={`/movies/${data.id}`}>
-      <div className="grid-card  button-click" ref={cardRef}>
+      <div className="card movie-card  button-click" ref={cardRef}>
         {useImg === "backdrop" ? (
           <img src={`${large}${data?.backdrop_path}`} alt="" />
         ) : (

@@ -1,3 +1,110 @@
+.card {
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 300ms ease;
+  position: relative;
+  height: 100%;
+  border: 2px solid transparent;
+  border-radius: 5px;
+}
+
+.card img {
+  transition: all 200ms ease;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card:hover {
+  border: 2px solid var(--primary);
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), transparent);
+  z-index: 50;
+}
+
+.card .content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 100;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 0 0.5em 0.5em;
+  opacity: 0.7;
+  /* min-height: 50px; */
+}
+
+.card .brief__rating {
+  position: absolute;
+  background: var(--primary-dark);
+  padding: 0.5em;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  right: 0.5em;
+  top: 0.5em;
+  color: var(--gray-1);
+  font-size: var(--fs-s);
+  font-weight: bold;
+  z-index: 500;
+}
+
+.card .brief {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.card .media-type {
+  position: absolute;
+  z-index: 500;
+  background: var(--green-transparent);
+  top: 0.5em;
+  left: 0.5em;
+  border-radius: 5em;
+  padding: 0.3em 0.6em;
+  font-size: var(--fs-xs);
+  font-weight: bold;
+}
+
+.card .brief .tag {
+  border-radius: 5em;
+  /* padding: 0.2em 0.6em; */
+  font-size: var(--fs-xxs);
+  color: var(--gray-1);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.card .title {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.card .tag.bg-primary {
+  background: var(--primary);
+}
+
+.card .tag.bg-green {
+  background: rgb(3, 153, 3);
+}
+
 .poster-card {
   position: relative;
   border-radius: 5px;
@@ -9,13 +116,13 @@
 }
 
 .poster-card:before {
-  /* content: ""; */
+  content: "";
   position: absolute;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
-  background: linear-gradient(0deg, var(--gray-2), transparent);
+  /* background: linear-gradient(red, green); */
 }
 
 .download-icon {

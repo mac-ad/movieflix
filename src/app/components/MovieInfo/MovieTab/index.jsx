@@ -2,9 +2,9 @@ import { useTabs } from "../../../hooks";
 import Tabs from "../../Tabs";
 import Grid from "../../Grid";
 import "./MovieTab.css";
-import PosterCard from "../../Cards/PosterCard";
 import PosterGrid from "../../Grid/PosterGrid";
 import BackdropGrid from "../../Grid/BackdropGrid";
+import PeopleGrid from "../../Grid/PeopleGrid";
 
 const tabList = [
   {
@@ -41,7 +41,7 @@ const MovieTab = ({ cast, posters, backdrops, reviews }) => {
         <Tabs tabList={tabList} currentTab={activeTab} setTab={setTab} />
       </div>
       <div className="movie-tabs__content wrapper-full">
-        {activeTab === "cast" && <Grid type="people" items={cast} />}
+        {activeTab === "cast" && <PeopleGrid type="people" items={cast} />}
         {activeTab === "poster" && <PosterGrid items={posters} />}
         {activeTab === "backdrop" && <BackdropGrid items={backdrops} />}
       </div>
