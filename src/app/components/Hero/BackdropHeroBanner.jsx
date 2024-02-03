@@ -4,7 +4,7 @@ const BackdropHeroBanner = ({ posters = [] }) => {
   return (
     <div className="backdrop-hero-banner-container">
       {posters.map(({ id, src }) => (
-        <img src={`${medium}${src}`} alt="" />
+        <img src={`${small}${src}`} alt="" />
       ))}
     </div>
   );
