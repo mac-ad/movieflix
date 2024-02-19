@@ -4,10 +4,6 @@ const baseUrlV3 = "https://api.themoviedb.org/3";
 const baseUrlV4 = "https://api.themoviedb.org/4";
 
 export const apiEndPoints = {
-  // auth : {
-  //     requestToken : `${baseUrlV4}/auth/`
-  // }
-
   movie: {
     popularMovies: `${baseUrlV3}/movie/popular?language=en-US&page=1`,
 
@@ -50,6 +46,12 @@ export const apiEndPoints = {
       `${baseUrlV3}/tv/${id}?language=en-US&append_to_response=aggregate_credits`,
 
     tvGenreList: `${baseUrlV3}/genre/tv/list?language=en-US`,
+  },
+  search: {
+    movieSearch: ({ query, pageQuery = 1 }) =>
+      `${baseUrlV3}/search/movie?language=en-US&query=${query}&page=${pageQuery}&include_adult=false`,
+    tvSearch: ({ query, pageQuery = 1 }) =>
+      `${baseUrlV3}/search/tv?language=en-US&query=${query}&page=${pageQuery}&include_adult=false`,
   },
   language: `${baseUrlV3}/configuration/languages`,
   trendingAllDay: `${baseUrlV3}/trending/all/day`,

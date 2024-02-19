@@ -1,18 +1,18 @@
 import { Navigate, useRoutes } from "react-router-dom";
 import { MainLayout } from "./Layout";
 import { Home, Main, MovieDetailPage } from "./Pages";
-import { DetectScroll } from "./HOC";
+import React, { Suspense } from "react";
+import Loading from "./components/Loading";
+
+// const Home = React.lazy(() => import("./Pages/Home"));
+// const Main = React.lazy(() => import("./Pages/Main"));
+// const MovieDetailPage = React.lazy(() => import("./Pages/MovieDetailPage"));
 
 export default function Router() {
   const routes = useRoutes([
     {
       path: "/",
-      element: (
-        // <MainLayout>
-        //   <Home />
-        // </MainLayout>
-        <Navigate to="/home" />
-      ),
+      element: <Navigate to="/home" />,
     },
     {
       path: "/home",
@@ -21,32 +21,6 @@ export default function Router() {
           <Main />
         </MainLayout>
       ),
-      children: [
-        {
-          path: "",
-          element: <></>,
-        },
-        {
-          path: "discover",
-          element: <></>,
-        },
-        {
-          path: "trending",
-          element: <></>,
-        },
-        {
-          path: "top-rated",
-          element: <></>,
-        },
-        {
-          path: "search",
-          element: <></>,
-        },
-        {
-          path: "recent",
-          element: <></>,
-        },
-      ],
     },
     {
       path: "/movies/:movieId",
@@ -61,23 +35,6 @@ export default function Router() {
         },
       ],
     },
-    // {
-    //   path: "/movies/:movieName/:movieId/",
-    //   children: [
-    //     {
-    //       path: "",
-    //       element: <></>,
-    //     },
-    //     {
-    //       path: "castcrew",
-    //       element: <></>,
-    //     },
-    //   ],
-    // },
-    // {
-    //   path: "/person/:personName/:personId",
-    //   element: <></>,
-    // },
     {
       path: "*",
     },

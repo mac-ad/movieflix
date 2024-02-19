@@ -6,7 +6,6 @@
 
 .hero-container::before {
   content: "";
-
   position: absolute;
   height: 100%;
   width: 100%;
@@ -26,8 +25,59 @@
   height: 100%;
   z-index: -1;
   transform: translate(-70px) scale(1.5) rotate(3deg);
-  inset: 0;
+  /* inset: 0; */
   animation: hero-banner 1.5s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+}
+
+.hero-container .search-suggestion-container {
+  border: 1px solid white;
+}
+
+.hero-form-wrapper {
+  width: 90%;
+  max-width: 600px;
+  z-index: 999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.hero-form input {
+  margin-inline: auto;
+  font-size: var(--fs-n);
+  outline: none;
+  background: none;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+  width: 100%;
+}
+
+.hero-form .search-suggestion-container {
+  max-height: 300px;
+  overflow-y: scroll;
+  background: red;
+}
+
+.hero-form .form-control {
+  max-width: 600px;
+  width: 90%;
+  margin-inline: auto;
+  display: flex;
+  gap: 2em;
+  padding: 0.5em 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.hero-form button {
+  padding: 0.8em 1.8em;
+  color: black;
+  font-weight: 500;
+  border-radius: 5px;
+  border: none;
+  outline: none;
 }
 
 @keyframes hero-banner {
@@ -43,5 +93,9 @@
 @media only screen and (min-width: 650px) {
   .hero-container {
     height: 500px;
+  }
+
+  .hero-form input {
+    font-size: var(--fs-l);
   }
 }

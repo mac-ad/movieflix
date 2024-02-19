@@ -1,4 +1,4 @@
-import { access_token } from "../statics/constants";
+import { access_token, apiEndPoints } from "../statics/constants";
 
 export const fetchOptions = (
   { method, body, token } = { method: "GET", body: null, token: null }
@@ -73,4 +73,31 @@ export const removeDuplicates = (items) => {
     .filter(Boolean);
 
   return { cleanedItems };
+};
+
+export const fetchSuggestions = async (query, controller) => {
+  const searchQueryResults = await Promise.all([
+    fetch(apiEndPoints.search.movieSearch({ query }), {
+      ...fetchOptions(),
+      signal: controller.signal,
+    }),
+    fetch(apiEndPoints.search.tvSearch({ query }), {
+      ...fetchOptions(),
+      signal: controller.signal,
+    }),
+  ]);
+
+  const error = searchQueryResults.some((res) => !res.ok);
+  if (error) throw new Error("error fetching data");
+
+  const [movieResponse, tvResponse] = searchQueryResults;
+  const [movieRes, tvRes] = await Promise.all([
+    movieResponse.json(),
+    tvResponse.json(),
+  ]);
+
+  return {
+    movies: movieRes.results || [],
+    tvs: tvRes.results.map((tv) => ({ ...tv, type: "tv" })) || [],
+  };
 };

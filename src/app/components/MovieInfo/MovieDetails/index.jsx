@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import countryToCurrency from "country-to-currency";
 import getSymbolFromCurrency from "currency-symbol-map";
-import { original } from "../../../statics";
+import { medium, original, small } from "../../../statics";
 import PrimaryBtn from "../../common/PrimaryBtn";
 import SocialMediaLinks from "../../SocialMediaLinks";
 
@@ -53,7 +53,7 @@ const MovieDetail = ({
       <div className="movie-detail-container__content wrapper">
         <div className="main__content">
           <div className="poster">
-            <img src={`${original}${moviePoster}`} alt="" />
+            <img src={`${medium}${moviePoster}`} alt="" />
           </div>
           <div className="actions">
             <a

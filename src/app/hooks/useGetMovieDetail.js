@@ -10,12 +10,14 @@ import { apiEndPoints } from "../statics/constants";
 import { useParams } from "react-router-dom";
 
 export const useGetMovieDetail = ({ movieId }) => {
+  const [loading, setLoading] = useState(false);
   const { movieId: id } = useParams();
 
   const [movieDetail, setMovieDetail] = useState({});
 
   useEffect(() => {
     (async () => {
+      setLoading(true);
       console.log("getting movie detail");
 
       const [movieResponse, languagesResponse] = await Promise.all([
@@ -94,8 +96,12 @@ export const useGetMovieDetail = ({ movieId }) => {
       console.log("got movie detail", movieDetail);
 
       setMovieDetail(detail);
+
+      // setTimeout(() => {
+      setLoading(false);
+      // }, 2000);
     })();
   }, [id]);
 
-  return [movieDetail];
+  return [movieDetail, loading];
 };

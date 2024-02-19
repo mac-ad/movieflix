@@ -7,6 +7,7 @@ import MainCarousel from "./MainCarousel";
 import axios from "axios";
 import { useFetchMainContent } from "../../hooks";
 import BackdropHeroBanner from "../../components/Hero/BackdropHeroBanner";
+import Loading from "../../components/Loading";
 
 const Main = () => {
   const [movies, tvs, trending, trendingMovies, trendingTvs, posters] =
