@@ -6,6 +6,9 @@ const BackdropHeroBanner = ({ posters = [] }) => {
       {posters.map(({ id, src }) => (
         <img src={`${medium}${src}`} alt="" />
       ))}
+      {posters.map(({ id, src }) => (
+        <img src={`${medium}${src}`} alt="" />
+      ))}
     </div>
   );
 };

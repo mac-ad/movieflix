@@ -1,0 +1,95 @@
+.searchsuggestions-container {
+  height: 200px;
+  overflow-y: scroll;
+  background: rgb(27, 26, 26);
+  color: black;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border-radius: 10px;
+}
+
+.searchsuggestions-container::-webkit-scrollbar {
+  display: none;
+}
+
+.searchsuggestions-container .suggestion-card img {
+  width: 50px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.searchsuggestions-container .suggestion-card {
+  display: flex;
+  gap: 1em;
+  background: rgb(36, 37, 36);
+  position: relative;
+}
+
+.suggestion-card .image {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0 5px 5px 0;
+}
+
+.suggestion-card > * {
+  pointer-events: none;
+}
+
+.suggestion-card .image img {
+  height: 100%;
+  width: 100px;
+  object-fit: cover;
+  object-position: top center;
+  filter: brightness(50%);
+}
+
+.suggestion-card {
+  color: rgba(255, 255, 255, 0.726);
+  border-radius: 5px;
+  /* overflow: hidden; */
+}
+
+.suggestion-card:hover {
+  background: black;
+  cursor: pointer;
+}
+
+.suggestion-card .detail {
+  position: relative;
+  display: flex;
+  padding: 0.7em;
+  width: 90%;
+  flex-direction: column;
+  gap: 0.5em;
+  z-index: 800;
+  overflow: hidden;
+}
+
+.suggestion-card:hover .detail-before {
+  transform: translateX(-30px) translateY(-60px) rotate(10deg);
+}
+
+.suggestion-card .detail-before {
+  position: absolute;
+  height: 500%;
+  width: 100%;
+  background-color: rgb(36, 37, 36);
+  left: 0;
+  top: 0;
+  transform: translateX(-40px) translateY(-60px) rotate(10deg);
+  z-index: -1;
+  transition: all 200ms ease;
+}
+
+.suggestion-card .detail .info {
+  display: flex;
+  color: rgba(255, 255, 255, 0.372);
+  gap: 0.5em;
+  /* align-items: center; */
+  font-size: var(--fs-xs);
+}

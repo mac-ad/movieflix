@@ -48,7 +48,13 @@ img {
 
 .wrapper,
 .wrapper-full {
-  max-width: 1700px;
+  max-width: 1600px;
+  margin-inline: auto;
+}
+
+.wrapper-new {
+  width: 100%;
+  max-width: 2000px;
   margin-inline: auto;
 }
 
