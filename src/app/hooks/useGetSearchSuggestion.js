@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchSuggestions } from "../utils/helpers";
+import { faLessThan } from "@fortawesome/free-solid-svg-icons";
 
 export const useGetSearchSuggestion = (query) => {
   const [suggestions, setSuggestions] = useState([]);

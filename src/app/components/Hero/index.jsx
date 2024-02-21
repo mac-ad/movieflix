@@ -2,12 +2,16 @@ import { useRef, useState } from "react";
 import "./Hero.css";
 import { useGetSearchSuggestion } from "../../hooks/useGetSearchSuggestion";
 import SearchSuggestions from "../SearchSuggestions";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleNotch, faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { faCircle } from "@fortawesome/free-regular-svg-icons";
 
 const Hero = ({ banner = null }) => {
   const userInputRef = useRef(null);
   const [userInput, setUserInput] = useState("");
 
-  const { searchSuggestions } = useGetSearchSuggestion(userInput);
+  const { searchSuggestions, loading: loadingSuggestion } =
+    useGetSearchSuggestion(userInput);
 
   const searchInputUpdateRef = useRef(null);
   let searchInputUpdate;
@@ -37,14 +41,16 @@ const Hero = ({ banner = null }) => {
                 ref={userInputRef}
                 onChange={inputChangeHandler}
               />
+
               <button>Search</button>
             </div>
           </form>
-          {searchSuggestions.length > 0 && (
-            <div className="hero-search-suggestion-wrapper">
-              <SearchSuggestions data={searchSuggestions} />
-            </div>
-          )}
+          <div className="hero-search-suggestion-wrapper">
+            <SearchSuggestions
+              data={searchSuggestions}
+              loading={loadingSuggestion}
+            />
+          </div>
         </div>
       </div>
     </div>

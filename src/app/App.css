@@ -12,8 +12,11 @@ body {
   --transparent-white: rgba(255, 255, 255, 0.327);
   --green-transparent: rgba(16, 191, 16, 0.732);
 
-  --primary: white;
-  --primary-dark: rgba(255, 255, 255, 0.485);
+  /* --primary: white;
+  --primary-dark: rgba(255, 255, 255, 0.485); */
+
+  /* --primary: rgb(120, 193, 67);
+  --primary-dark: rgb(86, 137, 49); */
 
   --fs-xxs: 0.65rem;
   --fs-xs: 0.75rem;

@@ -121,6 +121,9 @@
   display: flex;
   gap: 0.5em;
   justify-content: center;
+  width: 100%;
+  flex-wrap: Wrap;
+  max-width: 500px;
 }
 
 .movie__details .flex > div:first-child {
@@ -213,6 +216,10 @@
     grid-template-columns: minmax(250px, var(--poster-width)) 1fr;
     align-items: flex-start;
     gap: 3em;
+  }
+
+  .movie__details .genre {
+    justify-content: unset;
   }
 
   .movie-detail-container__content .actions {

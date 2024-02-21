@@ -19,7 +19,7 @@ const SuggestionCard = ({ data }) => {
   return (
     (data?.backdrop_path || data?.poster_path) && (
       <>
-        <div className="suggestion-card" onClick={clickHandler}>
+        <div className={`suggestion-card`} onClick={clickHandler}>
           <div className="detail">
             <div className="detail-before"></div>
             <div>
