@@ -1,6 +1,5 @@
 nav .logo {
   width: fit-content;
-  width: 9rem;
 }
 
 nav .logo img {
@@ -15,13 +14,14 @@ nav {
 }
 
 .nav-container {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  /* position: fixed;
+  top: 0; */
   width: 100%;
   /* border-bottom: 1px solid rgba(225, 225, 225, 0.1); */
   z-index: 999;
-  background: rgba(0, 0, 0, 0.9);
-  height: var(--nav-height);
+  /* background: rgba(0, 0, 0, 0.9); */
+  /* height: var(--nav-height); */
   /* backdrop-filter: blur(5px); */
   /* display: none; */
 }

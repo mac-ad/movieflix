@@ -21,15 +21,13 @@ const Nav = () => {
   };
 
   return (
-    <div className="nav-container">
+    <div className="nav-container bg-[rgba(0,0,0,.3)]">
       <nav className="wrapper">
-        <div>
-          <div className="burger" onClick={mobileNavHandler}>
+        {/* <div className="burger" onClick={mobileNavHandler}>
             <FontAwesomeIcon icon={faBars} />
-          </div>
-          <Logo />
-        </div>
-        <ul className="nav-list desktop">
+          </div> */}
+        <Logo />
+        {/* <ul className="nav-list desktop">
           {navItems.map((item, index) => (
             <TransparentBgBtn key={`${item}${index}`}>
               <Link to={item.route}>
@@ -37,7 +35,7 @@ const Nav = () => {
               </Link>
             </TransparentBgBtn>
           ))}
-        </ul>
+        </ul> */}
         {/* <Button1 className="search-icon icon" onClick={showSearchHandler}>
           <FontAwesomeIcon icon={faSearch} />
         </Button1> */}
@@ -48,7 +46,7 @@ const Nav = () => {
           <input type="text" placeholder="Search" />
           <button className="filter-icon">Filter</button>
         </div> */}
-        <div className="overlay" onClick={showSearchHandler}></div>
+        {/* <div className="overlay" onClick={showSearchHandler}></div> */}
         {/* <div className="search-container-desktop">
           <div className="icon">
             <FontAwesomeIcon icon={faSearch} />
@@ -57,7 +55,7 @@ const Nav = () => {
           <button className="filter-icon">Filter</button>
         </div> */}
       </nav>
-      <ul className={`nav-list mobile ${showMobNav ? "visible" : ""}`}>
+      {/* <ul className={`nav-list mobile ${showMobNav ? "visible" : ""}`}>
         <TransparentBgBtn>
           <Link to="/browse">
             <li>browse</li>
@@ -73,7 +71,7 @@ const Nav = () => {
             <li>tv shows</li>
           </Link>
         </TransparentBgBtn>
-      </ul>
+      </ul> */}
     </div>
   );
 };

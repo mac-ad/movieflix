@@ -18,7 +18,7 @@ function App() {
   return (
     <BrowserRouter>
       {/* <QueryClientProvider client={queryClient}> */}
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
       <Router />
       {/* </QueryClientProvider> */}
     </BrowserRouter>

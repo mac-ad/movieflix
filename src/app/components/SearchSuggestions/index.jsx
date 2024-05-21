@@ -19,7 +19,7 @@ const SearchSuggestions = ({ data, loading }) => {
       {data?.map((item) => (
         <SuggestionCard data={item} />
       ))}
-      <button>
+      <button className="rounded-md">
         <span>View all results</span>
         <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
       </button>

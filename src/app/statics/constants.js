@@ -55,6 +55,10 @@ export const apiEndPoints = {
   },
   language: `${baseUrlV3}/configuration/languages`,
   trendingAllDay: `${baseUrlV3}/trending/all/day`,
+  person: {
+    personDetails: (id) =>
+      `${baseUrlV3}/person/${id}?language=en-US&append_to_response=combined_credits,external_ids,images`,
+  },
 };
 
 export const blurPlaceholder =

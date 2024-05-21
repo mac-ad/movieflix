@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { large } from "../../statics";
+import { large, medium } from "../../statics";
 import { getRating } from "../../utils/helpers";
 
 const MovieCard = ({ data, useImg }) => {
@@ -19,9 +19,9 @@ const MovieCard = ({ data, useImg }) => {
     <Link to={`/movies/${data.id}`}>
       <div className="card movie-card  button-click" ref={cardRef}>
         {useImg === "backdrop" ? (
-          <img src={`${large}${data?.backdrop_path}`} alt="" />
+          <img src={`${medium}${data?.backdrop_path}`} alt="" />
         ) : (
-          <img src={`${large}${data?.poster_path}`} alt="" />
+          <img src={`${medium}${data?.poster_path}`} alt="" />
         )}
         {
           <div className="content">

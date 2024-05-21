@@ -6,9 +6,10 @@ import "./PosterGrid.css";
 const PosterGrid = ({ items }) => {
   return (
     <div className={`poster-grid-container `}>
-      {items.map((item, index) => (
-        <PosterCard key={`${item?.id}${index}`} data={item} />
-      ))}
+      {items?.length > 0 &&
+        items.map((item, index) => (
+          <PosterCard key={`${item?.id}${index}`} data={item} />
+        ))}
     </div>
   );
 };

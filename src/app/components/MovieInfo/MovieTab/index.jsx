@@ -5,6 +5,7 @@ import "./MovieTab.css";
 import PosterGrid from "../../Grid/PosterGrid";
 import BackdropGrid from "../../Grid/BackdropGrid";
 import PeopleGrid from "../../Grid/PeopleGrid";
+import Reviews from "./Reviews";
 
 const tabList = [
   {
@@ -43,6 +44,7 @@ const MovieTab = ({ cast, posters, backdrops, reviews }) => {
       <div className="movie-tabs__content wrapper-full">
         {activeTab === "cast" && <PeopleGrid type="people" items={cast} />}
         {activeTab === "poster" && <PosterGrid items={posters} />}
+        {activeTab === "reviews" && <Reviews items={reviews} />}
         {activeTab === "backdrop" && <BackdropGrid items={backdrops} />}
       </div>
     </div>

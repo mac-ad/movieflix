@@ -100,7 +100,7 @@ const MovieDetail = ({
             {crewData?.map((crew) => (
               <div key={crew.id} className="crew">
                 <p>{crew.job}</p>
-                <Link to={`/preson/${crew.id}`}>{crew.name}</Link>
+                <Link to={`/people/${crew.id}`}>{crew.name}</Link>
               </div>
             ))}
           </div>
