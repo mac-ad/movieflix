@@ -11,6 +11,7 @@ const SuggestionCard = ({ data }) => {
 
   const clickHandler = (e) => {
     if (data?.type === "tv") {
+      navigate(`/tv/${data?.id}`);
     } else {
       navigate(`/movies/${data?.id}`);
     }

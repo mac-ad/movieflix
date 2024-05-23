@@ -21,8 +21,8 @@ const Nav = () => {
   };
 
   return (
-    <div className="nav-container bg-[rgba(0,0,0,.3)]">
-      <nav className="wrapper">
+    <div className="nav-container ">
+      <nav className="wrapper ">
         {/* <div className="burger" onClick={mobileNavHandler}>
             <FontAwesomeIcon icon={faBars} />
           </div> */}

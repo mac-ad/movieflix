@@ -5,7 +5,10 @@ html {
 body {
   --gray-1: #131213;
   --gray-2: #111010;
+  --gray-2-transparent: #111010a1;
+
   --gray-light: #1a1a1b;
+
   --gray-lightest: #3a3a3d;
   --primary: #f47f21;
   --primary-dark: rgb(212, 110, 27);
@@ -50,6 +53,10 @@ li {
 img {
   width: 100%;
   display: block;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .wrapper {

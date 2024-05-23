@@ -9,7 +9,7 @@ const TvCard = ({ data }) => {
   const navigate = useNavigate();
 
   return (
-    <Link to="#">
+    <Link to={`/tv/${data?.id}`}>
       <div className="card tv-card button-click" ref={cardRef}>
         <img src={`${large}${data?.poster_path}`} alt="" />
         {

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { large, medium } from "../../statics";
+import { large, medium, small } from "../../statics";
 import { getRating } from "../../utils/helpers";
 
 const MovieCard = ({ data, useImg }) => {

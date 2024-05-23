@@ -4,6 +4,7 @@ import { Home, Main, MovieDetailPage } from "./Pages";
 import React, { Suspense } from "react";
 import Loading from "./components/Loading";
 import PeopleDetailPage from "./Pages/PeopleDetailPage/PeopleDetailPage";
+import TvDetailPage from "./Pages/TvDetailPage/TvDetailPage";
 
 // const Home = React.lazy(() => import("./Pages/Home"));
 // const Main = React.lazy(() => import("./Pages/Main"));
@@ -31,6 +32,19 @@ export default function Router() {
           element: (
             <MainLayout>
               <MovieDetailPage />
+            </MainLayout>
+          ),
+        },
+      ],
+    },
+    {
+      path: "/tv/:tvId",
+      children: [
+        {
+          path: "",
+          element: (
+            <MainLayout>
+              <TvDetailPage />
             </MainLayout>
           ),
         },
